@@ -1,0 +1,134 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+}
+body::-webkit-scrollbar {
+  width: 0;
+}
+body {
+  background-color: rgb(30, 30, 47);
+  color: #ffff;
+  font-family: "Poppins", sans-serif;
+}
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10vh;
+  background-color: rgb(39, 41, 61);
+  box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+.navbar .lg {
+  position: absolute;
+  left: 10px;
+}
+.navbar .lg img {
+  width: 15vw;
+  height: 10vh;
+}
+.resultSection {
+  display: flex;
+  column-gap: 1vw;
+  padding: 0 1vw;
+  margin-top: 3vh;
+}
+.userInfo {
+  display: grid;
+  grid-template-rows: 50% 50%;
+  row-gap: 1vh;
+  width: 25%;
+  height: 90vh;
+  background: linear-gradient(45deg, #00dfc4 0%, #2c97c9 100%);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.userInfo .imgX {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userInfo .imgX img {
+  border: 3px solid #ffff;
+  width: 15vw;
+  height: 30vh;
+}
+.userInfo .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3vh;
+  width: 100%;
+  color: #ffff;
+  font-weight: 400;
+}
+.info .name {
+  display: flex;
+  column-gap: 1vw;
+  border-bottom: 2px solid #ffff;
+  width: 15vw;
+  padding: 5px;
+}
+.graphSection {
+  display: flex;
+  width: 60%;
+  height: 100vh;
+}
+.graphSection canvas {
+  padding: 20px;
+  background-color: rgb(39, 41, 61);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.factors {
+  width: 15%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3vh;
+  justify-content: center;
+  background-color: rgb(39, 41, 61);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+}
+.factors a {
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #ffff;
+}
+.factors a:hover {
+  border-bottom: 2px solid #fff;
+  color: #ffff;
+}
+.disease {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.Card {
+  height: 60vh;
+  width: 60vw;
+}
+.gradient-border-card h2,
+p,
+h4,.LMbtn {
+  margin-top: 20px;
+}

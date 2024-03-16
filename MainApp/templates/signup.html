@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LungCure | Login</title>
+    <link rel="stylesheet" href="{% static 'CSS/utility2.css' %}" />
+    <link
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+    />
+  </head>
+  <style>
+    body {
+      background: url('{% static "assets/img/img4.jpg" %}');
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
+    }
+  </style>
+  <body>
+    <button class="BackBtn">
+      <a href="{% url 'index_view' %}">Go back</a>
+    </button>
+
+    <div class="container">
+      <form action="" method="post">
+        <div class="form signup">
+            {% csrf_token %}
+
+          <h2>Sign Up</h2>
+          <div class="inputBox">
+            {{ form.username }}
+            <i class="fas fa-user"></i>
+            <span>username</span>
+          </div>
+          <div class="inputBox">
+            {{ form.email }}
+            <i class="fa fa-envelope"></i>
+            <span>email address</span>
+          </div>
+          <div class="inputBox">
+            {{ form.password1 }}
+            <i class="fa fa-key"></i>
+            <span>create password</span>
+          </div>
+          <div class="inputBox">
+            {{ form.password2 }}
+            <i class="fas fa-lock"></i>
+            <span>confirm password</span>
+          </div>
+          <div class="inputBox">
+            <input type="submit" value="Create Account" />
+          </div>
+          <p>
+            Already a member?
+            <a href="{% url 'login_user' %}" class="login">Log in</a>
+          </p>
+        </div>
+      </form>
+    </div>
+    <script src="{% static 'JS/Script.js' %}"></script>
+  </body>
+</html>

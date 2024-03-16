@@ -1,0 +1,470 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-position: center;
+    background-size: cover;
+    /* background: linear-gradient(140deg, rgba(0,232,255,1) 30%, rgba(0,189,255,1) 100%, rgba(0,33,36,1) 100%); */
+    padding: 5vh 5vw;
+}
+
+.UploadImageSect {
+    width: 90vw;
+    height: 90vh;
+    background-color: #ffff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    background-color: rgba(202, 201, 201, 0.126);
+    backdrop-filter: blur(6px);
+}
+.UploadImageSect .headTxt{
+    color:rgb(0,0,0);
+    font-size: 30px;
+    font-family:'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight:550;
+}
+.imageSect{
+    display:grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding:1rem;
+}
+.uploadSection {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1rem;
+    align-items: center;
+    height:70vh;
+}
+.uploadSection div{
+    border:1.5px dashed grey;
+    height: 40vh;
+    width: 30vw;
+    /* margin-top: 6vh; */
+}
+.uploadSection a{
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.resultSection img{
+    width:30vw;
+    height:auto;
+}
+.formSect form{
+    display:grid;
+    align-items: center;
+    justify-content: center;
+}
+.icon-color{
+    color:rgb(186,186,186);
+}
+#imageUpload{
+    opacity:0;
+    background:transparent;
+    z-index: 2;
+    width:100%;
+    height:100%;
+}
+.btn-color{
+    background-color: #00dfc4;
+    color:#223243;
+    font-weight:500;
+    width:13vw;
+    height:7vh;
+    cursor: pointer;
+    box-shadow: 0px 0px 2px black;
+    border: none;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+    5px 5px 15px rgba(0, 0, 0, 0.35),
+    inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+    inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+.btn-color:hover{
+    background-color: #00dfc4;
+}
+
+.formSect label{
+    color:#ffff;
+}
+.form-control{
+    background-color: #2232432b!important;
+    color:#ffff!important;
+}
+.formElem{
+    display: grid;
+    row-gap: 5vh;
+}
+.formElem input::placeholder{
+    color:white;
+}
+.form-group{
+    margin-top: 3vh;
+}
+
+@media only screen and (min-width:320px) and (max-width:375px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 180vh;
+
+    }
+    .UploadImageSect .headTxt{
+        font-size: 15px;
+    }
+    .imageSect{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 28vh;
+        width: 50vw;
+    }
+    .btn-color{
+        width:40vw;
+        height:7vh;
+    }
+    .resultSection img{
+        width:50vw;
+        height:auto;
+    }
+    .uploadSection {
+        height:50vh;
+        row-gap: 3rem;
+    }
+}
+@media only screen and (min-width:375px) and (max-width:425px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 180vh;
+        display: grid;
+        row-gap: 3vh;
+    }
+    .UploadImageSect .headTxt{
+        font-size: 15px;
+    }
+    .imageSect{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 33vh;
+        width: 50vw;
+    }
+    .btn-color{
+        width:40vw;
+        height:7vh;
+    }
+    .resultSection img{
+        width:50vw;
+        height:auto;
+    }
+    .uploadSection {
+        height:50vh;
+        row-gap: 2rem;
+    }
+}
+@media only screen and (min-width:425px) and (max-width:550px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 180vh;
+        display: grid;
+        row-gap: 3vh;
+    }
+    .UploadImageSect .headTxt{
+        font-size: 15px;
+    }
+    .imageSect{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .uploadSection {
+        height:50vh;
+        row-gap: 3rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 30vh;
+        width: 40vw;
+    }
+    .resultSection img{
+        width:40vw;
+        height:auto;
+    }
+    .btn-color{
+        width:40vw;
+        height:7vh;
+    }
+}
+@media only screen and (min-width:550px) and (max-width:620px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 180vh;
+        display: grid;
+        row-gap: 3vh;
+    }
+    .UploadImageSect .head{
+        height:10vh;
+    }
+    .UploadImageSect .headTxt{
+        font-size: 20px;
+    }
+    .imageSect{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .uploadSection {
+        height:50vh;
+        row-gap: 3rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 35vh;
+        width: 40vw;
+    }
+    .resultSection img{
+        width:40vw;
+        height:auto;
+    }
+    .btn-color{
+        width:40vw;
+        height:7vh;
+    }
+}
+@media only screen and (min-width:620px) and (max-width:768px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 180vh;
+        display: grid;
+        row-gap: 3vh;
+    }
+    .UploadImageSect .headTxt{
+        font-size: 15px;
+    }
+    .imageSect{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+    .uploadSection {
+        height:50vh;
+        row-gap: 3rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 35vh;
+        width: 30vw;
+    }
+    .resultSection img{
+        width:30vw;
+        height:auto;
+    }
+    .btn-color{
+        width:40vw;
+        height:7vh;
+    }
+}
+@media only screen and (min-width:768px) and (max-width:950px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 180vh;
+        display: grid;
+        row-gap: 3rem;
+    }
+    .UploadImageSect .head{
+        height: 15vh;
+    }
+    .UploadImageSect .headTxt{
+        font-size: 25px;
+    }
+    .imageSect{
+        display:grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: 4rem;
+    }
+    .uploadSection {
+        height:70vh;
+        row-gap: 3rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 55vh;
+        width: 40vw;
+    }
+    .resultSection img{
+        width:40vw;
+        height:auto;
+    }
+    .btn-color{
+        width:40vw;
+        height:7vh;
+    }
+}
+@media only screen and (min-width:950px) and (max-width:1024px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 90vh;
+    }
+    .UploadImageSect .head{
+        height:13vh;
+    }
+    .uploadSection{
+        row-gap: 3rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 50vh;
+        width: 30vw;
+    }
+    .formSect form{
+        display:flex;
+        column-gap: 5vw;
+        width:80vw;
+    }
+    .resultSection img{
+        width:30vw;
+        height:auto;
+    }
+}
+@media only screen and (min-width:1024px) and (max-width:1100px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 90vh;
+        row-gap: 3rem;
+    }
+    .UploadImageSect .head{
+        height:12vh;
+    }
+    .uploadSection{
+        row-gap: 2rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 45vh;
+        width: 25vw;
+    }
+    .formSect form{
+        display:flex;
+        column-gap: 15vw;
+        width:80vw;
+    }
+    .resultSection img{
+        width:25vw;
+        height:auto;
+    }
+}
+@media only screen and (min-width:1100px) and (max-width:1200px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 90vh;
+        row-gap: 3rem;
+    }
+    .UploadImageSect .head{
+        height:12vh;
+    }
+    .uploadSection{
+        row-gap: 2rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 50vh;
+        width: 25vw;
+    }
+    .formSect form{
+        display:flex;
+        column-gap: 15vw;
+        width:80vw;
+    }
+    .resultSection img{
+        width:25vw;
+        height:auto;
+    }
+}
+@media only screen and (min-width:1200px) and (max-width:1300px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 90vh;
+        row-gap: 3rem;
+    }
+    .UploadImageSect .head{
+        height:12vh;
+    }
+    .uploadSection{
+        row-gap: 2rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 44vh;
+        width: 20vw;
+    }
+    .formSect form{
+        display:flex;
+        column-gap: 15vw;
+        width:80vw;
+    }
+    .resultSection img{
+        width:20vw;
+        height:auto;
+    }
+}
+@media only screen and (min-width:1300px) and (max-width:1440px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 90vh;
+        row-gap: 3rem;
+    }
+    .UploadImageSect .head{
+        height:12vh;
+    }
+    .uploadSection{
+        row-gap: 3rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 40vh;
+        width: 20vw;
+    }
+    .formSect form{
+        display:flex;
+        column-gap: 15vw;
+        width:80vw;
+    }
+    .resultSection img{
+        width:20vw;
+        height:auto;
+    }
+}
+@media only screen and (min-width:2500px){
+    .UploadImageSect {
+        width: 90vw;
+        height: 90vh;
+        display: grid;
+        row-gap: 4rem;
+    }
+    .UploadImageSect .head{
+        height:10vh;
+    }
+    .uploadSection{
+        row-gap: 8rem;
+    }
+    .uploadSection div{
+        border:1.5px dashed grey;
+        height: 45vh;
+        width: 20vw;
+    }
+    .formSect form{
+        display:flex;
+        column-gap: 15vw;
+        width:80vw;
+    }
+    .resultSection img{
+        width:20vw;
+        height:auto;
+    }
+}

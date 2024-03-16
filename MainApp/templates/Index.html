@@ -1,0 +1,157 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- ... other head content ... -->
+    <link rel="stylesheet" href="{% static 'css/Style.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <title>LungCure | Home</title>
+  </head>
+  <style>
+    body{
+      background: url('{% static "assets/img/img4.jpg" %}'); 
+      background-size: cover; 
+      background-position: center;
+    }
+  </style>
+  <body>
+
+    <div class="container-fluid bgColor page" id="Home">
+      <header>
+        <div class="logo">
+          <img src='{% static "assets/img/Logo.png" %}' alt="">
+        </div>
+        <ul>
+          <li><a href="{% url 'index_view' %}">Home</a></li>
+          <li><a href="{% url 'features' %}">Features</a></li>
+          <li><a href="{% url 'contact' %}">Contact</a></li>
+          <li id="actionBtn">
+            <a href="{% url 'login_user' %}">
+                <button class="action-btn nav-btn">Sign Up</button>
+            </a>
+        </li>
+        </ul>
+        <i class="fa-solid fa-bars menu-icon z-3" id="menuIcon"></i>
+        <div class="menu-collapse">
+          <ul>
+            <li><a href="{% url 'index_view' %}">Home</a></li>
+            <li><a href="{% url 'features' %}">Features</a></li>
+            <li><a href="{% url 'contact' %}">Contact</a></li>
+            <li><button class="action-btn collapse-btn nav-btn">Get Started</button></li>
+          </ul>
+        </div>
+      </header>
+      <div class="main-title d-flex justify-content-center align-items-center">
+        <h1>Detect Lungs Cancer</h1>
+        <h1>with X-ray Images</h1>
+        <p>Revolutionary System for Early Detection</p>
+        <a href="{% url 'image_upload_page' %}">
+          <button
+            type="button"
+            class="btn base-color px-5 py-2 rounded-pill fw-bold"
+            >
+            Get Started
+          </button>
+        </a>
+        
+
+      </div>
+    </div>
+    <div
+      class="details d-flex justify-content-center align-items-center page"
+      id="details">
+      <div class="txt d-flex position-relative">
+        <h5>DETAILS</h5>
+        <h1>
+          About Our Lungs Cancer <br />
+          Detection System
+        </h1>
+        <p>
+          Our system utilizes state-of-the-art machine learning algorithms to
+          analyze X-ray images and identify potential signs of lungs cancer.
+          With a user-friendly interface, it is easy to upload your X-ray images
+          and receive accurate results within minutes.
+        </p>
+        <button
+          type="button"
+          class="btn base-color rounded-pill fw-bold position-absolute"
+          onclick="moveDown()">
+          Next
+        </button>
+      </div>
+      <div class="Det_img">
+        <img src='{% static "assets/img/X-ray.svg" %}' alt />
+      </div>
+    </div>
+    <div class="features page" id="features">
+      <div class="txt2 d-flex justify-content-center align-items-center">
+        <h1>Key Features</h1>
+        <p>
+          Discovering the powerful features of our lung cancer detection system
+        </p>
+      </div>
+      <div class="boxes">
+        <div class="box">
+          <!-- <img src="assets/img/box-white.png" alt="" class="icon"> -->
+          <div>Automated Detection</div>
+          <p>
+            The system uses advanced algorithms to automatically detect <br />
+            lung cancer in X-ray images.
+          </p>
+        </div>
+        <div class="box">
+          <div>Accurate Results</div>
+          <p>
+            The detection system provides highly accurate results, helping in
+            <br />
+            early diagnosis and treatment.
+          </p>
+        </div>
+        <div class="box">
+          <div>User-Friendly Interface</div>
+          <p>
+            The website offers a user-friendly interface, making it easy for
+            <br />
+            users to navigate and use the system.
+          </p>
+        </div>
+        <div class="box">
+          <div>Secure Image Upload</div>
+          <p>
+            Users can securely upload their X-ray images to the system, <br />
+            ensuring privacy and data protection.
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="infoPage page">
+      <div class="headLine">
+        <h1>Advanced Technology for Accurate Diagnosis</h1>
+      </div>
+      <div class="shortLine">
+        <p>
+          Our website offers a cutting-edge solution for detecting lungs cancer
+          using X-ray images
+        </p>
+      </div>
+      <button class="rdBtn rounded-pill base-color">Read more</button>
+      <h1 class="lg">LungCure</h1>
+      <div class="links">
+        <a href="#">Home</a>
+        <a href="#">Features</a>
+        <a href="#">Sign In/Sign Up</a>
+        <a href="#">Contact</a>
+      </div>
+      <p class="infoLine">@ The Website Developed by Team07</p>
+    </div>
+    <script src="{% static 'JS/Navbar.js' %}"></script>
+    <script src="{% static 'JS/NavCollapse.js' %}"></script>
+    <script src="{% static 'JS/Script.js' %}"></script>
+    <script src="{% static 'JS/bootstrap.bundle.min.js' %}"></script>
+  </body>
+</html>

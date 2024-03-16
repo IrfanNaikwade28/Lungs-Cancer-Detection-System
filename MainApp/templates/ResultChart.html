@@ -1,0 +1,392 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chart.js Bar Chart</title>
+    
+    <!-- <link rel="stylesheet" href="resultChart.css" />
+    <link rel="stylesheet" href="anim.css" /> -->
+
+    <link rel="stylesheet" href="{% static 'css/resultChart.css' %}"></link>
+    <link rel="stylesheet" href="{% static 'css/anim.css' %}"></link>
+    <!-- Include Chart.js library from CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="lg">
+        <img src='{% static "assets/img/Logo.png" %}' alt="">
+    </div>
+      <h2>Lungs Cancer Detection System Report</h2>
+    </div>
+    <div class="resultSection">
+      <div class="userInfo">
+        <div class="imgX">
+          <img src='/media/{{form_data.data_image}}' alt="">
+        </div>
+        <div class="info">
+          <div class="name">
+            <svg
+              width="25px"
+              height="25px"
+              viewBox="0 0 24 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <circle cx="12" cy="6" r="4" stroke="#ffff" stroke-width="1.5" />
+              <path
+                stroke="#ffff"
+                d="M19.9975 18C20 17.8358 20 17.669 20 17.5C20 15.0147 16.4183 13 12 13C7.58172 13 4 15.0147 4 17.5C4 19.9853 4 22 12 22C14.231 22 15.8398 21.8433 17 21.5634"
+                stroke="#1C274C"
+                stroke-width="1.5"
+                stroke-linecap="round"
+              />
+            </svg>
+            <span>{{form_data.first_name}} {{form_data.last_name}}</span>
+          </div>
+          <div class="name">
+            <svg
+              fill="#ffff"
+              width="25px"
+              height="25px"
+              viewBox="0 0 1024 1024"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M266.815 537.708c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.775 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zM266.815 679.347c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.775 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zM266.815 820.988c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.775 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zm182.77 0c0 22.62-18.34 40.96-40.96 40.96s-40.96-18.34-40.96-40.96 18.34-40.96 40.96-40.96 40.96 18.34 40.96 40.96zM228.18 81.918v153.6c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48v-153.6c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48zm528.09 0v153.6c0 11.311 9.169 20.48 20.48 20.48s20.48-9.169 20.48-20.48v-153.6c0-11.311-9.169-20.48-20.48-20.48s-20.48 9.169-20.48 20.48z"
+              />
+              <path
+                d="M890.877 137.517c33.931 0 61.44 27.509 61.44 61.44v703.375c0 33.931-27.509 61.44-61.44 61.44h-757.76c-33.931 0-61.44-27.509-61.44-61.44V198.957c0-33.931 27.509-61.44 61.44-61.44h757.76zm-757.76 40.96c-11.309 0-20.48 9.171-20.48 20.48v703.375c0 11.309 9.171 20.48 20.48 20.48h757.76c11.309 0 20.48-9.171 20.48-20.48V198.957c0-11.309-9.171-20.48-20.48-20.48h-757.76z"
+              />
+              <path
+                d="M575.03 338.288c0-33.93-27.51-61.44-61.44-61.44s-61.44 27.51-61.44 61.44c0 33.93 27.51 61.44 61.44 61.44s61.44-27.51 61.44-61.44zm40.96 0c0 56.551-45.849 102.4-102.4 102.4s-102.4-45.849-102.4-102.4c0-56.551 45.849-102.4 102.4-102.4s102.4 45.849 102.4 102.4z"
+              />
+            </svg>
+            <span>{{form_data.age}}</span>
+          </div>
+          <div class="name">
+            <svg
+              fill="#ffff"
+              height="25px"
+              width="25px"
+              version="1.1"
+              id="Capa_1"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 247.582 247.582"
+              xml:space="preserve"
+            >
+              <g>
+                <path
+                  d="M196.666,93.047V76.445h10v-21h-10v-15h-25v15h-11v21h11v16.424c-29,5.64-51.581,31.564-51.581,62.617
+		c0,35.162,28.69,63.769,63.852,63.769c35.163,0,63.645-28.606,63.645-63.769C247.582,124.769,225.666,99.059,196.666,93.047z
+		 M184.021,194.254c-21.377,0-38.769-17.392-38.769-38.769c0-21.378,17.392-38.77,38.769-38.77c21.378,0,38.77,17.392,38.77,38.77
+		C222.79,176.863,205.399,194.254,184.021,194.254z"
+                />
+                <path
+                  d="M127.581,91.404c0-35.162-28.523-63.769-63.686-63.769S0,56.242,0,91.404c0,31.068,22.666,57.003,51.666,62.625v27.99
+		l-8.184-7.057l-13.471,16.039l34.295,28.945l35.335-28.831l-13.437-16.268l-9.537,7.658v-28.674
+		C105.666,147.804,127.581,122.105,127.581,91.404z M25.208,91.404c0-21.377,17.392-38.769,38.77-38.769s38.77,17.392,38.77,38.769
+		c0,21.378-17.392,38.77-38.77,38.77S25.208,112.782,25.208,91.404z"
+                />
+              </g>
+            </svg>
+            <span>{{form_data.gender}}</span>
+          </div>
+          <div class="name">
+            <svg
+              height="25px"
+              width="25px"
+              version="1.1"
+              id="_x32_"
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              xml:space="preserve"
+            >
+              <style type="text/css">
+                .st0 {
+                  fill: #ffff;
+                }
+              </style>
+              <g>
+                <path
+                  class="st0"
+                  d="M510.746,110.361c-2.128-10.754-6.926-20.918-13.926-29.463c-1.422-1.794-2.909-3.39-4.535-5.009
+		c-12.454-12.52-29.778-19.701-47.531-19.701H67.244c-17.951,0-34.834,7-47.539,19.708c-1.608,1.604-3.099,3.216-4.575,5.067
+		c-6.97,8.509-11.747,18.659-13.824,29.428C0.438,114.62,0,119.002,0,123.435v265.137c0,9.224,1.874,18.206,5.589,26.745
+		c3.215,7.583,8.093,14.772,14.112,20.788c1.516,1.509,3.022,2.901,4.63,4.258c12.034,9.966,27.272,15.45,42.913,15.45h377.51
+		c15.742,0,30.965-5.505,42.967-15.56c1.604-1.298,3.091-2.661,4.578-4.148c5.818-5.812,10.442-12.49,13.766-19.854l0.438-1.05
+		c3.646-8.377,5.497-17.33,5.497-26.628V123.435C512,119.06,511.578,114.649,510.746,110.361z M34.823,99.104
+		c0.951-1.392,2.165-2.821,3.714-4.382c7.689-7.685,17.886-11.914,28.706-11.914h377.51c10.915,0,21.115,4.236,28.719,11.929
+		c1.313,1.327,2.567,2.8,3.661,4.272l2.887,3.88l-201.5,175.616c-6.212,5.446-14.21,8.443-22.523,8.443
+		c-8.231,0-16.222-2.99-22.508-8.436L32.19,102.939L34.823,99.104z M26.755,390.913c-0.109-0.722-0.134-1.524-0.134-2.341V128.925
+		l156.37,136.411L28.199,400.297L26.755,390.913z M464.899,423.84c-6.052,3.492-13.022,5.344-20.145,5.344H67.244
+		c-7.127,0-14.094-1.852-20.142-5.344l-6.328-3.668l159.936-139.379l17.528,15.246c10.514,9.128,23.922,14.16,37.761,14.16
+		c13.89,0,27.32-5.032,37.827-14.16l17.521-15.253L471.228,420.18L464.899,423.84z M485.372,388.572
+		c0,0.803-0.015,1.597-0.116,2.304l-1.386,9.472L329.012,265.409l156.36-136.418V388.572z"
+                />
+              </g>
+            </svg>
+            <span>{{form_data.city}}</span>
+          </div>
+        </div>
+      </div>
+      <div class="graphSection">
+        <canvas id="myBarChart" width="450" height="343"></canvas>
+      </div>
+      <div class="factors">
+        <a href="#" value="1" class="dData">Atelectasis</a>
+        <a href="#" value="2" class="dData">Cardiomegaly</a>
+        <a href="#" value="3" class="dData">Consolidation</a>
+        <a href="#" value="4" class="dData">Edema</a>
+        <a href="#" value="5" class="dData">Effusion</a>
+        <a href="#" value="6" class="dData">Emphysema</a>
+        <a href="#" value="7" class="dData">Fibrosis</a>
+        <a href="#" value="8" class="dData">Hernia</a>
+        <a href="#" value="9" class="dData">Infiltration</a>
+        <a href="#" value="10" class="dData">Mass</a>
+        <a href="#" value="11" class="dData">Nodule</a>
+        <a href="#" value="12" class="dData">Pleural_Thickening</a>
+        <a href="#" value="13" class="dData">Pneumonia</a>
+        <a href="#" value="14" class="dData">Pneumothorax</a>
+      </div>
+    </div>
+    <!-- Create a canvas element to render the chart -->
+    <div class="disease" id="disease">
+      <div class="col-lg-4 Card">
+        <div class="gradient-border-card">
+          <h2 class="gradient-text-animation " id="diseaseName">Atelectasis | 10.09% / 0.63</h2><br>
+          <span class="gradient-text-animation "  id="currentValue"></span>
+          <p class="mt-3" id="diseaseDefinition">
+            Atelectasis is a condition where part or all of a lung collapses.
+            Understanding the importance of deep breathing exercises, coughing,
+            and getting up and moving around after surgery or prolonged bed rest
+            can help prevent atelectasis. Following post-operative care
+            instructions closely is crucial.
+          </p>
+          <h4 class="gradient-text-animation">Symptoms:</h4>
+          <p class="mt-3 " id="diseaseSymptoms">
+            Shortness of breath, rapid breathing, chest pain, coughing.
+          </p>
+          <h4 class="gradient-text-animation">Care Steps:</h4>
+          <p class="mt-3 " id="diseaseCareSteps">
+            Treatment involves deep breathing exercises, coughing exercises,
+            incentive spirometry, and sometimes bronchodilators or suctioning to
+            clear mucus from the airways.
+          </p>
+          <div class="shimmer" style="--delay: -6s"></div>
+          <i aria-hidden="true"></i>
+          <div class="glowing-wrapper glowing-wrapper-active mt-3 LMbtn">
+            <div class="glowing-wrapper-animations">
+              <div class="glowing-wrapper-glow"></div>
+              <div class="glowing-wrapper-mask-wrapper">
+                <div class="glowing-wrapper-mask"></div>
+              </div>
+            </div>
+            <div class="glowing-wrapper-borders-masker">
+              <div class="glowing-wrapper-borders"></div>
+            </div>
+            <a id="learnMore" target="_blank" class="glowing-wrapper-button w-inline-block">
+              <div class="text-white">Learn More</div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // Sample data for 14 bars
+        var data = {
+          labels: [
+            "{{lb1}}",
+            "{{lb2}}",
+            "{{lb3}}",
+            "{{lb4}}",
+            "{{lb5}}",
+            "{{lb6}}",
+            "{{lb7}}",
+            "{{lb8}}",
+            "{{lb9}}",
+            "{{lb10}}",
+            "{{lb11}}",
+            "{{lb12}}",
+            "{{lb13}}",
+            "{{lb14}}",
+          ],
+          datasets: [
+            {
+              label: "Bar Chart Example",
+              data: [
+                "{{data1}}",
+                "{{data2}}",
+                "{{data3}}",
+                "{{data4}}",
+                "{{data5}}",
+                "{{data6}}",
+                "{{data7}}",
+                "{{data8}}",
+                "{{data9}}",
+                "{{data10}}",
+                "{{data11}}",
+                "{{data12}}",
+                "{{data13}}",
+                "{{data14}}",
+              ],
+              backgroundColor: "rgba(75, 192, 192, 0.2)", // Bar color
+              borderColor: "rgba(75, 192, 192, 1)", // Border color
+              borderWidth: 1, // Border width
+            },
+          ],
+        };
+
+        // Chart configuration
+        var config = {
+          type: "bar",
+          data: data,
+          options: {
+            scales: {
+              y: {
+                beginAtZero: true,
+              },
+            },
+          },
+        };
+
+        // Create the bar chart
+        var ctx = document.getElementById("myBarChart").getContext("2d");
+        var myBarChart = new Chart(ctx, config);
+      });
+      var anchorTags = document.querySelectorAll(".dData");
+var cardData = [
+    {
+        name: "Atelectasis | Standard value : 0.63",
+        currentData : "Current Graph Value : {{data1}}",
+        definition: "Atelectasis is a condition where part or all of a lung collapses.",
+        symtoms: "Shortness of breath, rapid breathing, chest pain, coughing",
+        careSteps: "Treatment involves deep breathing exercises, coughing exercises, incentive spirometry, and sometimes bronchodilators or suctioning to clear mucus from the airways."
+    },
+    {
+        name: "Cardiomegaly | Standard value : 0.64",
+        currentData : "Current Graph Value : {{data2}}",
+        definition: "Cardiomegaly refers to an enlarged heart.Patients should focus on lifestyle modifications such as maintaining a healthy diet, regular exercise, managing stress, and adhering to prescribed medications to manage underlying conditions like high blood pressure or heart disease.",
+        symtoms: "Shortness of breath, chest pain, cough, fever",
+        careSteps: "Management includes medications to control blood pressure and heart rate, lifestyle changes such as a heart-healthy diet, exercise, and in severe cases, surgical interventions like valve repair or replacement."
+    },
+    {
+        name: "Consolidation | Standard value : 0.68",
+        currentData : "Current Graph Value : {{data3}}",
+        definition: "Consolidation occurs when the airspaces in the lungs fill with fluid.It's important for patients to understand the importance of completing antibiotic courses if prescribed, staying hydrated, and getting plenty of rest. In severe cases, hospitalization may be necessary.",
+        symtoms: "Symptoms: Shortness of breath, fatigue, swelling in the legs and ankles, irregular heartbeat.",
+        careSteps: "Management includes medications to control blood pressure and heart rate, lifestyle changes such as a heart-healthy diet, exercise, and in severe cases, surgical interventions like valve repair or replacement."
+    },
+    {
+        name: "Edema | Standard value : 0.74",
+        currentData : "Current Graph Value : {{data4}}",
+        definition: "Edema is swelling caused by excess fluid trapped in body tissues.Patients should monitor their salt intake, elevate affected limbs, wear compression garments if appropriate, and adhere to prescribed medications such as diuretics as directed by their healthcare provider.",
+        symtoms: "Swelling in the feet, ankles, or legs, puffiness or swelling of the face, abdomen or other areas.",
+        careSteps: "Management includes addressing the underlying cause, such as heart failure or kidney disease, through medications, dietary changes (like reducing salt intake), compression stockings, and elevating the affected limbs."
+    },
+    {
+        name: "Effusion | Standard value : 0.70",
+        currentData : "Current Graph Value : {{data5}}",
+        definition: "Effusion refers to an abnormal accumulation of fluid in a body cavity, often seen in the lungs or abdomen.Understanding the underlying cause of the effusion is important for appropriate management. Treatment may include draining the fluid, treating the underlying condition, or both.",
+        symtoms: "Shortness of breath, chest pain, cough, fever (if infected).",
+        careSteps: "Treatment depends on the cause; it may include draining the fluid through procedures like thoracentesis or paracentesis, medications to reduce inflammation or fight infection, or addressing the underlying condition causing the effusion."
+    },
+    {
+        name: "Emphysema | Standard value : 0.60",
+        currentData : "Current Graph Value : {{data6}}",
+        definition: "Emphysema is a type of chronic obstructive pulmonary disease (COPD) characterized by damage to the air sacs in the lungs.Smoking cessation is crucial to slow down the progression of emphysema. Patients should also focus on maintaining good nutrition, staying active within their limits, and using inhalers or other medications as prescribed.",
+        symtoms: "Shortness of breath, wheezing, chronic cough, chest tightness.",
+        careSteps: "Management involves quitting smoking, avoiding exposure to lung irritants, pulmonary rehabilitation, medications (such as bronchodilators and inhaled steroids), and in severe cases, supplemental oxygen therapy or surgery."
+    },
+    {
+        name: "Fibrosis | Standard value : 0.61",
+        currentData : "Current Graph Value : {{data7}}",
+        definition: "Fibrosis involves the thickening and scarring of connective tissue, often seen in the lungs.Patients should understand the importance of avoiding exposure to environmental toxins, managing underlying conditions, and participating in pulmonary rehabilitation programs to maintain lung function.",
+        symtoms: "Shortness of breath, dry cough, fatigue, unexplained weight loss.",
+        careSteps: "Treatment may include medications to reduce inflammation and suppress the immune system, supplemental oxygen therapy, pulmonary rehabilitation, and in advanced cases, lung transplantation."
+    },
+    {
+        name: "Hernia | Standard value : 0.65",
+        currentData : "Current Graph Value : {{data8}}",
+        definition: "A hernia occurs when an organ pushes through an opening in the muscle or tissue that holds it in place.Treatment may involve lifestyle changes such as weight loss, avoiding heavy lifting, and wearing supportive garments. In some cases, surgical intervention may be necessary.",
+        symtoms: "Visible bulge in the affected area, pain or discomfort, especially when lifting or bending over.",
+        careSteps: "Treatment involves surgery to repair the hernia, particularly if it is causing pain or complications like bowel obstruction."
+    },
+    {
+        name: "Infiltration | Standard value : 0.61",
+        currentData : "Current Graph Value : {{data9}}",
+        definition: "Infiltration refers to the abnormal accumulation of substances such as cells, fluids, or foreign bodies within tissues or organs.Treatment depends on the underlying cause of the infiltration. Patients should follow their healthcare provider's recommendations closely, which may include medication, drainage procedures, or monitoring for resolution.",
+        symtoms: "Fever, chills, cough, chest pain.",
+        careSteps: "Management involves identifying and treating the underlying cause, which may include antibiotics for bacterial infections, antifungal medications for fungal infections, or supportive care for non-infectious causes."
+    },
+    {
+        name: "Mass | Standard value : 0.61",
+        currentData : "Current Graph Value : {{data10}}",
+        definition: "A mass refers to a lump or growth of tissue that may be benign or malignant.Prompt evaluation by a healthcare provider is essential to determine the nature of the mass and appropriate treatment. This may involve imaging tests, biopsies, or surgical removal.",
+        symtoms: "Can vary depending on the location and nature of the mass, but may include pain, swelling, changes in bowel or bladder habits, unexplained weight loss.",
+        careSteps: "Treatment depends on the nature of the mass; it may involve surgical removal, chemotherapy, radiation therapy, or a combination of these treatments."
+    },
+    {
+        name: "Nodule | Standard value : 0.55",
+        currentData : "Current Graph Value : {{data11}}",
+        definition: "A nodule is a small, abnormal growth or lump.Depending on the location and characteristics of the nodule, treatment may include monitoring for changes over time, further imaging or biopsy, or surgical removal.",
+        symtoms: "Often asymptomatic but may cause coughing, wheezing, shortness of breath if pressing on nearby structures.",
+        careSteps: "Management depends on the underlying cause and characteristics of the nodule; it may include observation, biopsy, or surgical removal."
+    },
+    {
+        name: "Pleural Thickening | Standard value : 0.60",
+        currentData : "Current Graph Value : {{data12}}",
+        definition: "Pleural thickening involves the thickening and scarring of the pleura, the membrane that surrounds the lungs.Treatment may focus on managing underlying causes such as asbestos exposure or previous infections. In some cases, symptomatic relief with pain management may be necessary.",
+        symtoms: "Shortness of breath, chest pain, persistent cough.",
+        careSteps: "Treatment may involve addressing the underlying cause, such as asbestos exposure, and managing symptoms with pain relief medications, respiratory support, or surgical interventions in severe cases."
+    },
+    {
+        name: "Pneumonia | Standard value : 0.63",
+        currentData : "Current Graph Value : {{data13}}",
+        definition: "Pneumonia is an infection that inflames the air sacs in one or both lungs.Patients should complete the full course of prescribed antibiotics, stay hydrated, get plenty of rest, and follow up with their healthcare provider as needed for monitoring.",
+        symtoms: "Fever, cough, shortness of breath, chest pain, fatigue.",
+        careSteps: "Treatment typically involves antibiotics for bacterial pneumonia, antiviral medications for viral pneumonia, rest, adequate hydration, and sometimes supplemental oxygen or hospitalization for severe cases."
+    },
+    {
+        name: "Pneumothorax | Standard value : 0.62",
+        currentData : "Current Graph Value : {{data14}}",
+        definition: "Pneumothorax occurs when air leaks into the space between the lungs and the chest wall, causing the lung to collapse partially or fully.Depending on the severity, treatment may involve rest and observation, needle aspiration to remove air",
+        symtoms: "Sudden sharp chest pain, shortness of breath, rapid heart rate, cyanosis (bluish discoloration of the skin).",
+        careSteps: "Treatment usually involves chest tube insertion to remove air from the pleural space, allowing the lung to re-expand, along with pain management and monitoring for complications like tension pneumothorax. In some cases, surgery may be necessary to prevent recurrence."
+    }
+];
+
+anchorTags.forEach(function(anchorTag) {
+    anchorTag.addEventListener("click", function(event) {
+        event.preventDefault(); // Prevent default anchor behavior
+
+        // Get the index value from the anchor tag's value attribute
+        var index = parseInt(anchorTag.getAttribute("value")) - 1;
+
+        // Check if the index is valid
+        if (index >= 0 && index < cardData.length) {
+            // Update the content of the card with the data from cardData
+            document.getElementById("diseaseName").textContent = cardData[index].name;
+            document.getElementById("currentValue").textContent = cardData[index].currentData;
+            document.getElementById("diseaseDefinition").textContent = cardData[index].definition;
+            document.getElementById("diseaseSymptoms").textContent = cardData[index].symtoms;
+            document.getElementById("diseaseCareSteps").textContent = cardData[index].careSteps;
+            location.href = "#disease";
+        } else {
+            console.error("Invalid index:", index);
+        }
+    });
+});
+document.getElementById("learnMore").addEventListener("click",function(){
+    location.href = "https://ijsrem.com/download/lung-cancer-detection-using-weakly-supervised-learning-for-leveraging-the-chestx-ray8-dataset-for-automated-classification/";
+});
+    </script>
+    <!-- <script src="{% static 'js/card.js' %}"></script> -->
+    <script src="{% static 'js/result.js' %}"></script>
+  </body>
+</html>

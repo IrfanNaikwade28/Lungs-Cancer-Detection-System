@@ -1,0 +1,392 @@
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LungCure | Features</title>
+    <link rel="stylesheet" href="{% static 'css/utility.css' %}">
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/utility5.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
+    
+</head>
+
+<body>
+    <div class="home">
+        <video autoplay loop muted>
+            <source src='{% static "assets/video/background.mp4" %}' type="video/mp4" />
+        </video>
+    </div>
+
+    <div class="features mainPage">
+        <div class="container max-w-7xl pt-5 pb-12 mb-12 mainPage">
+            <div class="gradient-line">
+            </div>
+            <div class="row">
+                <div class="col">
+                    <style>
+                        .draw-path {
+                            --length: 100;
+                            stroke-dasharray: var(--length) var(--length);
+                            stroke-dashoffset: var(--path-from);
+                            filter: blur(10px);
+                            fill: none;
+                            animation: draw 1.5s infinite ease-in-out;
+                        }
+
+                        .u-path {
+                            --path-from: calc(var(--length) * 3px);
+                            --path-to: var(--length);
+                        }
+
+                        .seven-path {
+                            --path-from: calc(var(--length) * -3px);
+                            --path-to: calc(var(--length) * -1px);
+                            animation-delay: 0.4s;
+                        }
+
+                        @keyframes draw {
+                            from {
+                                stroke-dashoffset: var(--path-from);
+                            }
+
+                            to {
+                                stroke-dashoffset: var(--path-to);
+                                opacity: 0;
+                            }
+                        }
+                    </style>
+                    <defs>
+                        <linearGradient id="seven-gradient" gradientUnits="userSpaceOnUse" x1="23.5345" y1="27.9014"
+                            x2="121.9345" y2="27.9014" gradientTransform="matrix(1 0 0 -1 0 55.8028)">
+                            <stop offset="0" style="stop-color: #f0ebab" />
+                            <stop offset="0.4" style="stop-color: #f3b4ce" />
+                            <stop offset="1" style="stop-color: #96cfca" />
+                        </linearGradient>
+                        <clipPath id="clip-seven">
+                            <path
+                                d="M102.2345,2.9014v9.8h9.6v23.6l-65.3-33.3l-0.3-0.1h-22.7l32.4,16.3l66,33.7v-50H102.2345z" />
+                        </clipPath>
+                        <clipPath id="clip-u">
+                            <path
+                                d="M52.3345,38.5014c0,2.2091-1.7909,4-4,4h-31.6c-2.2091,0-4-1.7909-4-4v-35.6h-9.8v35.6c0,7.7,6.2,13.9,13.8,13.9h31.6c7.6,0,13.8-6.2,13.8-13.9v-8.1l-9.8-5V38.5014z" />
+                        </clipPath>
+                    </defs>
+
+                    <g fill="rgba(255,255,255,0.08)">
+                        <path
+                            d="M102.2345,2.9014v9.8h9.6v23.6l-65.3-33.3l-0.3-0.1h-22.7l32.4,16.3l66,33.7v-50H102.2345z" />
+                        <path
+                            d="M52.3345,38.5014c0,2.2091-1.7909,4-4,4h-31.6c-2.2091,0-4-1.7909-4-4v-35.6h-9.8v35.6c0,7.7,6.2,13.9,13.8,13.9h31.6c7.6,0,13.8-6.2,13.8-13.9v-8.1l-9.8-5V38.5014z" />
+                    </g>
+
+                    <path clip-path="url(#clip-seven)" class="draw-path seven-path" stroke="url(#seven-gradient)"
+                        stroke-width="11" stroke-miterlimit="10" d="M102.0318,7.8102h14.9001v36.7666L25.5799-1.9312"
+                        pathLength="100" />
+                    <path clip-path="url(#clip-u)" class="draw-path u-path" stroke="#fff" stroke-width="11"
+                        stroke-miterlimit="10"
+                        d="M7.8842,2.7939l0.0451,35.4694c0,5.0171,3.8335,9.0363,8.8506,9.0363h31.1442c5.0171,0,9.0843-4.0672,9.0843-9.0843V24.9046"
+                        pathLength="100" />
+                    <path clip-path="url(#clip-seven)" class="draw-path seven-path" stroke="url(#seven-gradient)"
+                        stroke-width="11" stroke-miterlimit="10" d="M102.0318,7.8102h14.9001v36.7666L25.5799-1.9312"
+                        pathLength="100" />
+                    <path clip-path="url(#clip-u)" class="draw-path u-path" stroke="#fff" stroke-width="11"
+                        stroke-miterlimit="10"
+                        d="M7.8842,2.7939l0.0451,35.4694c0,5.0171,3.8335,9.0363,8.8506,9.0363h31.1442c5.0171,0,9.0843-4.0672,9.0843-9.0843V24.9046"
+                        pathLength="100" />
+                    <path clip-path="url(#clip-seven)" class="draw-path seven-path" stroke="url(#seven-gradient)"
+                        stroke-width="11" stroke-miterlimit="10" d="M102.0318,7.8102h14.9001v36.7666L25.5799-1.9312"
+                        pathLength="100" />
+                    <path clip-path="url(#clip-u)" class="draw-path u-path" stroke="#fff" stroke-width="11"
+                        stroke-miterlimit="10"
+                        d="M7.8842,2.7939l0.0451,35.4694c0,5.0171,3.8335,9.0363,8.8506,9.0363h31.1442c5.0171,0,9.0843-4.0672,9.0843-9.0843V24.9046"
+                        pathLength="100" />
+                    </svg>
+                </div>
+            </div>
+            <div class="row g-4 mt-3">
+                <div class="page">
+                    <div class="col-lg-4 fetBox">
+                        <div class="gradient-border-card">
+                            <div class="icon mb-3">
+                                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
+                                    xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" width="30px"
+                                    height="30px" viewBox="0 0 122.879 119.799"
+                                    enable-background="new 0 0 122.879 119.799" xml:space="preserve">
+                                    <g>
+                                        <path fill="#ffff"
+                                            d="M49.988,0h0.016v0.007C63.803,0.011,76.298,5.608,85.34,14.652c9.027,9.031,14.619,21.515,14.628,35.303h0.007v0.033v0.04 h-0.007c-0.005,5.557-0.917,10.905-2.594,15.892c-0.281,0.837-0.575,1.641-0.877,2.409v0.007c-1.446,3.66-3.315,7.12-5.547,10.307 l29.082,26.139l0.018,0.016l0.157,0.146l0.011,0.011c1.642,1.563,2.536,3.656,2.649,5.78c0.11,2.1-0.543,4.248-1.979,5.971 l-0.011,0.016l-0.175,0.203l-0.035,0.035l-0.146,0.16l-0.016,0.021c-1.565,1.642-3.654,2.534-5.78,2.646 c-2.097,0.111-4.247-0.54-5.971-1.978l-0.015-0.011l-0.204-0.175l-0.029-0.024L78.761,90.865c-0.88,0.62-1.778,1.209-2.687,1.765 c-1.233,0.755-2.51,1.466-3.813,2.115c-6.699,3.342-14.269,5.222-22.272,5.222v0.007h-0.016v-0.007 c-13.799-0.004-26.296-5.601-35.338-14.645C5.605,76.291,0.016,63.805,0.007,50.021H0v-0.033v-0.016h0.007 c0.004-13.799,5.601-26.296,14.645-35.338C23.683,5.608,36.167,0.016,49.955,0.007V0H49.988L49.988,0z M50.004,11.21v0.007h-0.016 h-0.033V11.21c-10.686,0.007-20.372,4.35-27.384,11.359C15.56,29.578,11.213,39.274,11.21,49.973h0.007v0.016v0.033H11.21 c0.007,10.686,4.347,20.367,11.359,27.381c7.009,7.012,16.705,11.359,27.403,11.361v-0.007h0.016h0.033v0.007 c10.686-0.007,20.368-4.348,27.382-11.359c7.011-7.009,11.358-16.702,11.36-27.4h-0.006v-0.016v-0.033h0.006 c-0.006-10.686-4.35-20.372-11.358-27.384C70.396,15.56,60.703,11.213,50.004,11.21L50.004,11.21z" />
+                                    </g>
+                                </svg>
+                            </div>
+                            <h2 class="gradient-text-animation">Finding Lung Cancer Early</h2>
+                            <p class="mt-3">
+                                Chest X-ray analysis with AI helps spot suspicious areas in the lungs that might be
+                                cancerous, potentially leading to earlier detection and treatment.
+                            </p>
+                            <div class="shimmer" style="--delay: -6s"></div>
+                            <i aria-hidden="true"></i>
+                            <div class="glowing-wrapper glowing-wrapper-active mt-3">
+                                <div class="glowing-wrapper-animations">
+                                    <div class="glowing-wrapper-glow"></div>
+                                    <div class="glowing-wrapper-mask-wrapper">
+                                        <div class="glowing-wrapper-mask"></div>
+                                    </div>
+                                </div>
+                                <div class="glowing-wrapper-borders-masker">
+                                    <div class="glowing-wrapper-borders"></div>
+                                </div>
+                                <a href="#" class="glowing-wrapper-button w-inline-block">
+                                    <div class="text-white">Learn More</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 fetBox">
+                        <div class="gradient-border-card">
+                            <div class="icon mb-3">
+                                <svg aria-labelledby="middleware-icon-title" fill="none" height="28" role="img"
+                                    viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                                    <title id="middleware-icon-title">An icon for Edge Middleware</title>
+                                    <defs>
+                                        <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4"
+                                            x2="40" y1="4" y2="24">
+                                            <stop stop-color="white" stop-opacity="0.2"></stop>
+                                            <stop offset="0" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="0.5" stop-color="white"></stop>
+                                            <stop offset="0.75" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path
+                                        d="M18.5 11.0001L18.5 17.0001M26 8.00012V20.0001M11.75 14.0001L2 20.0001L2 8.00012L11.75 14.0001Z"
+                                        stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                            <h2>Faster Analysis</h2>
+                            <p class="mt-3">By automating some analysis tasks, AI can help doctors review X-rays
+                                quicker, potentially improving screening efficiency.</p>
+                            <div class="favorite-item mt-3">
+                                <span aria-hidden="true" style="height: 16px;">
+                                    <div class="favorite-container">
+                                        <div class="sparkles-container">
+                                            <div class="sparkle-container"
+                                                style="--starting-position-x: 6px; --starting-position-y: 6px; --starting-scale: 0; --ending-position-x: 1px; --ending-position-y: 1px; --ending-scale: 1; --color: #ff4cff; --delay: 50ms; --duration: 180ms;">
+                                                <svg fill="none" height="6" viewBox="0 0 6 6" width="6"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M2.5 0.5V0H3.5V0.5C3.5 1.60457 4.39543 2.5 5.5 2.5H6V3V3.5H5.5C4.39543 3.5 3.5 4.39543 3.5 5.5V6H3H2.5V5.5C2.5 4.39543 1.60457 3.5 0.5 3.5H0V3V2.5H0.5C1.60457 2.5 2.5 1.60457 2.5 0.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></div>
+                                            <div class="sparkle-container"
+                                                style="--starting-position-x: 13px; --starting-position-y: 6px; --starting-scale: 0; --ending-position-x: 16px; --ending-position-y: 0px; --ending-scale: 0.7; --color: #ff8b8b; --delay: 100ms; --duration: 260ms;">
+                                                <svg fill="none" height="6" viewBox="0 0 6 6" width="6"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M2.5 0.5V0H3.5V0.5C3.5 1.60457 4.39543 2.5 5.5 2.5H6V3V3.5H5.5C4.39543 3.5 3.5 4.39543 3.5 5.5V6H3H2.5V5.5C2.5 4.39543 1.60457 3.5 0.5 3.5H0V3V2.5H0.5C1.60457 2.5 2.5 1.60457 2.5 0.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></div>
+                                            <div class="sparkle-container"
+                                                style="--starting-position-x: 2px; --starting-position-y: 13px; --starting-scale: 0; --ending-position-x: 0px; --ending-position-y: 13px; --ending-scale: 0.5; --color: #f4ff21; --delay: 120ms; --duration: 150ms;">
+                                                <svg fill="none" height="6" viewBox="0 0 6 6" width="6"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M2.5 0.5V0H3.5V0.5C3.5 1.60457 4.39543 2.5 5.5 2.5H6V3V3.5H5.5C4.39543 3.5 3.5 4.39543 3.5 5.5V6H3H2.5V5.5C2.5 4.39543 1.60457 3.5 0.5 3.5H0V3V2.5H0.5C1.60457 2.5 2.5 1.60457 2.5 0.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></div>
+                                            <div class="sparkle-container"
+                                                style="--starting-position-x: 9px; --starting-position-y: 15px; --starting-scale: 0; --ending-position-x: 9px; --ending-position-y: 18px; --ending-scale: 0.7; --color: #46e5e5; --delay: 80ms; --duration: 200ms;">
+                                                <svg fill="none" height="6" viewBox="0 0 6 6" width="6"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M2.5 0.5V0H3.5V0.5C3.5 1.60457 4.39543 2.5 5.5 2.5H6V3V3.5H5.5C4.39543 3.5 3.5 4.39543 3.5 5.5V6H3H2.5V5.5C2.5 4.39543 1.60457 3.5 0.5 3.5H0V3V2.5H0.5C1.60457 2.5 2.5 1.60457 2.5 0.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></div>
+                                            <div class="sparkle-container"
+                                                style="--starting-position-x: 15px; --starting-position-y: 12px; --starting-scale: 0; --ending-position-x: 18px; --ending-position-y: 13px; --ending-scale: 0.5; --color: #6f6fff; --delay: 0ms; --duration: 340ms;">
+                                                <svg fill="none" height="6" viewBox="0 0 6 6" width="6"
+                                                    xmlns="http://www.w3.org/2000/svg">
+                                                    <path
+                                                        d="M2.5 0.5V0H3.5V0.5C3.5 1.60457 4.39543 2.5 5.5 2.5H6V3V3.5H5.5C4.39543 3.5 3.5 4.39543 3.5 5.5V6H3H2.5V5.5C2.5 4.39543 1.60457 3.5 0.5 3.5H0V3V2.5H0.5C1.60457 2.5 2.5 1.60457 2.5 0.5Z"
+                                                        fill="currentColor"></path>
+                                                </svg></div>
+                                        </div>
+                                    </div>
+                                </span>
+                            </div>
+                            <div class="shimmer" style="--delay: -8s"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 fetBox">
+                        <div class="gradient-border-card">
+                            <div class="icon mb-3">
+                                <svg aria-labelledby="observability-icon-title" fill="none" height="28" role="img"
+                                    viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                                    <title id="observability-icon-title">An icon of a bar chart</title>
+                                    <defs>
+                                        <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4"
+                                            x2="40" y1="4" y2="24">
+                                            <stop stop-color="white" stop-opacity="0.2"></stop>
+                                            <stop offset="0" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="0.5" stop-color="white"></stop>
+                                            <stop offset="0.75" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path
+                                        d="M8 17V20M12 14V20M16 11V20M20 8V20M6 25H22C22.7957 25 23.5587 24.6839 24.1213 24.1213C24.6839 23.5587 25 22.7957 25 22V6C25 5.20435 24.6839 4.44129 24.1213 3.87868C23.5587 3.31607 22.7957 3 22 3H6C5.20435 3 4.44129 3.31607 3.87868 3.87868C3.31607 4.44129 3 5.20435 3 6V22C3 22.7957 3.31607 23.5587 3.87868 24.1213C4.44129 24.6839 5.20435 25 6 25Z"
+                                        stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                            <h2>Reduced Radiation</h2>
+                            <p class="mt-3">Compared to CT scans, X-rays involve significantly lower radiation exposure,
+                                making them ideal for frequent screenings.</p>
+                            <button type="submit" class="mt-3">
+                                <span>
+                                    <span class="highlight-bg"></span>
+                                    <span class="button-text">
+                                        <svg class="me-2" fill="none" height="24" stroke="currentColor"
+                                            stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"
+                                            viewBox="0 0 24 24" width="24">
+                                            <path d="M16 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"></path>
+                                            <circle cx="8.5" cy="7" r="4"></circle>
+                                            <path d="M20 8v6"></path>
+                                            <path d="M23 11h-6"></path>
+                                        </svg>
+                                        Collaborate with a Team
+                                    </span>
+                                </span>
+                            </button>
+                            <div class="shimmer" style="--delay: -12.5s"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mainPage page">
+                    <div class="col-lg-6 wrn">
+                        <div class="gradient-border-card">
+                            <div class="icon mb-3">
+                                <svg aria-labelledby="ssr-icon-title" fill="none" height="12" role="img"
+                                    viewBox="0 0 28 12" width="28" xmlns="http://www.w3.org/2000/svg">
+                                    <title id="ssr-icon-title">An icon for Server-Side Rendering</title>
+                                    <defs>
+                                        <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4"
+                                            x2="40" y1="4" y2="24">
+                                            <stop stop-color="white" stop-opacity="0.2"></stop>
+                                            <stop offset="0" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="0.5" stop-color="white"></stop>
+                                            <stop offset="0.75" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path
+                                        d="M4.32 11.648C3.47733 11.648 2.73067 11.4987 2.08 11.2C1.42933 10.9013 0.917333 10.464 0.544 9.888C0.181333 9.30133 0 8.592 0 7.76V7.36H1.712V7.76C1.712 8.54933 1.94667 9.14133 2.416 9.536C2.896 9.93067 3.53067 10.128 4.32 10.128C5.12 10.128 5.72267 9.96267 6.128 9.632C6.53333 9.29067 6.736 8.85333 6.736 8.32C6.736 7.968 6.64 7.68 6.448 7.456C6.256 7.232 5.984 7.056 5.632 6.928C5.28 6.78933 4.85867 6.66133 4.368 6.544L3.776 6.4C3.06133 6.22933 2.43733 6.02133 1.904 5.776C1.38133 5.52 0.976 5.184 0.688 4.768C0.4 4.352 0.256 3.81867 0.256 3.168C0.256 2.50667 0.416 1.94133 0.736 1.472C1.06667 1.00267 1.52 0.64 2.096 0.384C2.672 0.128 3.34933 0 4.128 0C4.90667 0 5.6 0.133334 6.208 0.400001C6.82667 0.666667 7.312 1.06133 7.664 1.584C8.016 2.10667 8.192 2.76267 8.192 3.552V4.128H6.48V3.552C6.48 3.072 6.37867 2.68267 6.176 2.384C5.984 2.08533 5.712 1.86667 5.36 1.728C5.008 1.58933 4.59733 1.52 4.128 1.52C3.44533 1.52 2.912 1.664 2.528 1.952C2.15467 2.22933 1.968 2.61867 1.968 3.12C1.968 3.46133 2.048 3.744 2.208 3.968C2.37867 4.18133 2.624 4.35733 2.944 4.496C3.264 4.63467 3.664 4.75733 4.144 4.864L4.736 5.008C5.46133 5.168 6.10133 5.376 6.656 5.632C7.21067 5.87733 7.648 6.21333 7.968 6.64C8.288 7.06667 8.448 7.616 8.448 8.288C8.448 8.96 8.27733 9.54667 7.936 10.048C7.60533 10.5493 7.13067 10.944 6.512 11.232C5.89333 11.5093 5.16267 11.648 4.32 11.648Z"
+                                        fill="url(#icon-gradient-fill)"></path>
+                                    <path
+                                        d="M13.91 11.648C13.0673 11.648 12.3207 11.4987 11.67 11.2C11.0193 10.9013 10.5073 10.464 10.134 9.888C9.77133 9.30133 9.59 8.592 9.59 7.76V7.36H11.302V7.76C11.302 8.54933 11.5367 9.14133 12.006 9.536C12.486 9.93067 13.1207 10.128 13.91 10.128C14.71 10.128 15.3127 9.96267 15.718 9.632C16.1233 9.29067 16.326 8.85333 16.326 8.32C16.326 7.968 16.23 7.68 16.038 7.456C15.846 7.232 15.574 7.056 15.222 6.928C14.87 6.78933 14.4487 6.66133 13.958 6.544L13.366 6.4C12.6513 6.22933 12.0273 6.02133 11.494 5.776C10.9713 5.52 10.566 5.184 10.278 4.768C9.99 4.352 9.846 3.81867 9.846 3.168C9.846 2.50667 10.006 1.94133 10.326 1.472C10.6567 1.00267 11.11 0.64 11.686 0.384C12.262 0.128 12.9393 0 13.718 0C14.4967 0 15.19 0.133334 15.798 0.400001C16.4167 0.666667 16.902 1.06133 17.254 1.584C17.606 2.10667 17.782 2.76267 17.782 3.552V4.128H16.07V3.552C16.07 3.072 15.9687 2.68267 15.766 2.384C15.574 2.08533 15.302 1.86667 14.95 1.728C14.598 1.58933 14.1873 1.52 13.718 1.52C13.0353 1.52 12.502 1.664 12.118 1.952C11.7447 2.22933 11.558 2.61867 11.558 3.12C11.558 3.46133 11.638 3.744 11.798 3.968C11.9687 4.18133 12.214 4.35733 12.534 4.496C12.854 4.63467 13.254 4.75733 13.734 4.864L14.326 5.008C15.0513 5.168 15.6913 5.376 16.246 5.632C16.8007 5.87733 17.238 6.21333 17.558 6.64C17.878 7.06667 18.038 7.616 18.038 8.288C18.038 8.96 17.8673 9.54667 17.526 10.048C17.1953 10.5493 16.7207 10.944 16.102 11.232C15.4833 11.5093 14.7527 11.648 13.91 11.648Z"
+                                        fill="url(#icon-gradient-fill)"></path>
+                                    <path
+                                        d="M19.692 11.424V0.224H24.396C25.0893 0.224 25.6973 0.346667 26.22 0.592C26.7533 0.826667 27.164 1.168 27.452 1.616C27.7507 2.064 27.9 2.59733 27.9 3.216V3.392C27.9 4.096 27.7293 4.66133 27.388 5.088C27.0573 5.504 26.652 5.79733 26.172 5.968V6.224C26.5773 6.24533 26.9027 6.384 27.148 6.64C27.3933 6.88533 27.516 7.24267 27.516 7.712V11.424H25.772V7.952C25.772 7.664 25.6973 7.43467 25.548 7.264C25.3987 7.09333 25.1587 7.008 24.828 7.008H21.42V11.424H19.692ZM21.42 5.44H24.204C24.8227 5.44 25.3027 5.28533 25.644 4.976C25.9853 4.656 26.156 4.224 26.156 3.68V3.552C26.156 3.008 25.9853 2.58133 25.644 2.272C25.3133 1.952 24.8333 1.792 24.204 1.792H21.42V5.44Z"
+                                        fill="url(#icon-gradient-fill)"></path>
+                                </svg>
+                            </div>
+                            <h2>Doctor Confirmation Needed</h2>
+                            <p class="mt-3">The final diagnosis always comes from a medical professional who will
+                                examine the X-ray and consider the AI's findings.</p>
+                            <div class="shimmer" style="--delay: -4s"></div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 wrn">
+                        <div class="gradient-border-card">
+                            <div class="icon mb-3">
+                                <svg aria-labelledby="zero-icon-title" fill="none" height="28" role="img"
+                                    viewBox="0 0 28 28" width="28" xmlns="http://www.w3.org/2000/svg">
+                                    <title id="zero-icon-title">An icon showing a line through a circle</title>
+                                    <defs>
+                                        <linearGradient gradientUnits="userSpaceOnUse" id="icon-gradient-fill" x1="4"
+                                            x2="40" y1="4" y2="24">
+                                            <stop stop-color="white" stop-opacity="0.2"></stop>
+                                            <stop offset="0" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="0.5" stop-color="white"></stop>
+                                            <stop offset="0.75" stop-color="white" stop-opacity="0.4"></stop>
+                                            <stop offset="1" stop-color="white" stop-opacity="0"></stop>
+                                        </linearGradient>
+                                    </defs>
+                                    <path
+                                        d="M3.56251 24.849L25.349 3.06248M26.1667 14C26.1667 20.4433 20.9433 25.6666 14.5 25.6666C8.05669 25.6666 2.83334 20.4433 2.83334 14C2.83334 7.55666 8.05669 2.33331 14.5 2.33331C20.9433 2.33331 26.1667 7.55666 26.1667 14Z"
+                                        stroke="url(#icon-gradient-fill)" stroke-linecap="round" stroke-linejoin="round"
+                                        stroke-width="1.5"></path>
+                                </svg>
+                            </div>
+                            <h2>Not a Replacement</h2>
+                            <p class="mt-3">While helpful, this technology is not a replacement for doctor's expertise.
+                                X-rays may miss some cancers, and AI might flag non-cancerous issues.</p>
+                            <div class="shimmer" style="--delay: -10s"></div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <div class="gradient-background__wrapper">
+                <div class="gradient-background">
+                    <div class="gradient-background__shape gradient-background__shape--1"></div>
+                    <div class="gradient-background__shape gradient-background__shape--2"></div>
+                </div>
+                <div class="gradient-background__noise"></div>
+            </div>
+        </div>
+    </div>
+    <div class="wh">
+        <h2>Who We Are ?</h2>
+        <div class="container">
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx">
+                        <img src="{% static 'assets/img/character1.jpeg' %}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h3>Sushant Khadake<br><span>Creative Designer</span></h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx">
+                        <img src="{% static 'assets/img/character2.jpeg' %}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h3>Sandesh Pol<br><span>Backend Developer</span></h3>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card">
+                <div class="content">
+                    <div class="imgBx">
+                        <img src="{% static 'assets/img/character3.jpeg' %}" alt="">
+                    </div>
+                    <div class="contentBx">
+                        <h3>Irfan Naikwade<br><span>Fronted Developer</span></h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="infoPage">
+        <div class="links">
+            <a href="#">Home</a>
+            <a href="#">Features</a>
+            <a href="#">Sign In/Sign Up</a>
+            <a href="#">Contact</a>
+        </div>
+        <p class="infoLine">@ The Website Developed by Team07</p>
+    </div>
+</body>
+<script src="{% static 'js/Script.js' %}"></script>
+<script src="{% static 'js/main.js' %}"></script>
+
+</html>

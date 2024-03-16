@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LungCure | ImageUploadPage</title>
+    <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+    <link rel="stylesheet" href="{% static 'css/utility3.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<style>
+    body {
+        background: url('{% static "assets/img/img4.jpg" %}');
+        background-position: center;
+        background-size: cover;
+        background-repeat: no-repeat;
+    }
+</style>
+
+<body>
+    <div class="UploadImageSect position-relative">
+        <div class="head border border-secondery border-bottom py-4 px-5">
+          <h5 class="headTxt text-light">Upload X-ray Image</h5>
+        </div>
+          <div class="imageSect">
+              <div class="formSect">
+                  <form class="row-gap-4" method="post" enctype="multipart/form-data" >
+                    {% csrf_token %}
+                    <div class="uploadSection">
+                          <div class="d-flex justify-content-center align-items-center row-gap-3">
+                            <input type="file" id="imageUpload" name="data_image" accept="image/*" />
+                            <i class="fa-solid fa-upload fa-2x position-absolute z-2 icon-color"></i>
+                            <div class="resultSection" style="display: none">
+                                <img id="uploadedImage" class="z-3" alt="Uploaded Lung Image" />
+                            </div>
+                          </div>
+                            <a class="btn-color" onclick="uploadImage()">Upload Image</a>
+                       </div>
+                      <div class="formElem">
+                          <div class="form-row row">
+                              <div class="form-group col-md-6">
+                                  <input type="text" class="form-control" id="firstName" name="first_name" placeholder="First Name">
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <input type="text" class="form-control" id="lastName" name="last_name" placeholder="Last Name">
+                              </div>
+                          </div>
+              
+                          <div class="form-row row ">
+                              <div class="form-group col-md-6">
+                                  <input type="number" class="form-control" id="age" name="age" placeholder="Age">
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <select class="form-control" id="gender" name="gender">
+                                      <option value="">Gender</option>
+                                      <option value="male">Male</option>
+                                      <option value="female">Female</option>
+                                      <option value="other">Other</option>
+                                  </select>
+                              </div>
+                          </div>
+              
+                          <div class="form-group">
+                              <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                          </div>
+              
+                          <div class="form-row row">
+                              <div class="form-group col-md-6">
+                                  <input type="text" class="form-control" id="city" name="city" placeholder="City">
+                              </div>
+                              <div class="form-group col-md-6">
+                                  <input type="text" class="form-control" id="pincode" name="pincode" placeholder="Pincode">
+                              </div>
+                          </div>
+              
+                          <button type="submit" class="btn-color mt-3">Submit</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+</body>
+<script src="{% static 'js/Script.js' %}"></script>
+
+</html>

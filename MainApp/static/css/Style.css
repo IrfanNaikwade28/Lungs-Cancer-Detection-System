@@ -1,0 +1,487 @@
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  font-family: "Anta";
+}
+*::-webkit-scrollbar {
+  width: 0;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  overflow-y: scroll;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+.page {
+  height: 100vh;
+  scroll-snap-align: start;
+}
+.bgColor {
+  height: 100vh;
+  flex-direction: column;
+}
+header{
+  overflow: visible;
+}
+header .logo{
+  width:200px;
+  height:100px;
+  overflow: visible;
+}
+header .logo img{
+  width:230px;
+  height:100px;
+  z-index: 3;
+}
+header ul{
+  width:73% !important;
+}
+.main-title {
+  height: 85vh;
+  flex-direction: column;
+  row-gap: 2vh;
+  color: white;
+  text-align: center;
+}
+.transparentBG{
+  background-color: rgba(255, 255, 255, 0.123);
+  backdrop-filter: blur(10px);
+}
+.main-title h1 {
+  font-size: 50px;
+}
+.main-title p {
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+.main-title button {
+  color: #ffff;
+}
+.details {
+  height: 100vh;
+  width: 100vw;
+  grid-template-columns: repeat(2,1fr);
+  column-gap: 15vw;
+  color: #ffff;
+}
+.details .txt {
+  width:40vw;
+  flex-direction: column;
+  row-gap: 5vh;
+  background-color: rgba(255, 255, 255, 0.126);
+  backdrop-filter: blur(6px);
+  padding:50px;
+  border-radius:10px;
+  -webkit-border-radius:10px;
+  -moz-border-radius:10px;
+  -ms-border-radius:10px;
+  -o-border-radius:10px;
+}
+.details .txt h5 {
+  overflow: visible;
+  color: #ffff;
+  font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+.details .txt h1 {
+  color: #ffff;
+  overflow: visible;
+  font-size: 30px;
+  font-weight: 600;
+}
+.details .txt p {
+  color: #ffff;
+  font-size: 14px;
+  text-align: left;
+  overflow: visible;
+}
+.details .txt button{
+  bottom: 20px!important;
+  width:20vw;
+}
+.Det_img {
+  height: 65vh;
+  width: 35vw;
+}
+.Det_img img {
+  height: 65vh;
+  width: 30vw;
+}
+.base-color {
+  background-color: #00dfc4 !important;
+  color: #223243 !important;
+  box-shadow: -5px -5px 15px rgba(255, 255, 255, 0.1),
+  5px 5px 15px rgba(0, 0, 0, 0.35),
+  inset -5px -5px 15px rgba(255, 255, 255, 0.1),
+  inset 5px 5px 15px rgba(0, 0, 0, 0.35);
+}
+.base-color:hover {
+  background-color: #048274 !important;
+}
+.features {
+  display: flex;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  flex-direction: column;
+  row-gap: 10vh;
+}
+.features .txt2 {
+  flex-direction: column;
+  padding: 5vh 5vw;
+  row-gap: 2vh;
+}
+.features .txt2 h5 {
+  color: #ffff;
+  font-size: 15px;
+  font-family: sans-serif;
+  font-weight: bold;
+}
+.features .txt2 h1 {
+  color: #ffff;
+}
+.features .txt2 p {
+  color: #ffff;
+  font-size: 14px;
+}
+.boxes {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  row-gap: 5vh;
+  column-gap: 3vw;
+}
+.boxes .box {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  height: 20vh;
+  background-color: rgba(255, 255, 255, 0.126);
+  backdrop-filter: blur(6px);
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.25);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  padding: 2vh 0 0 5vw;
+}
+.boxes .box div {
+  display: flex;
+  align-items: center;
+  column-gap: 5px;
+  font-weight: 500;
+  font-size: 30px;
+  color:#ffff;
+}
+.boxes .box div .icon{
+  width:20px;
+  height:20px;
+}
+.boxes .box p {
+  font-size: 12px;
+  color:#ffff;
+}
+.infoPage {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+.infoPage h1,
+p,
+a {
+  color: #ffff;
+}
+.headLine {
+  position: relative;
+  top: 100;
+}
+.shortLine {
+  position: relative;
+  top: 140;
+}
+.rdBtn {
+  position: relative;
+  top: 200;
+  color: #ffff;
+  padding: 1vh 4vw;
+  border: none;
+}
+.rdBtn:hover {
+  background-color: #03584e;
+}
+.lg {
+  position: absolute;
+  bottom: 130;
+}
+.links {
+  display: flex;
+  justify-content: center;
+  position: absolute;
+  bottom: 80;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.29);
+  width: 100%;
+  column-gap: 2vw;
+}
+.links a {
+  text-decoration: none;
+  color: #ffff;
+  margin-bottom: 1vh;
+}
+.infoLine {
+  position: absolute;
+  bottom: 10;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 550px) {
+  body {
+    background-position: center;
+  }
+  .main-title h1 {
+    font-size: 40px;
+  }
+  .main-title p {
+    font-size: 10px;
+    letter-spacing: 2px;
+  }
+  .details {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .details .txt{
+    width:100%;
+    height:60%;
+    overflow: visible;
+  }
+  .details .txt h1 {
+    font-size: 12px;
+    height:7vh;
+  }
+  .details .txt p {
+    font-size: 8px;
+  }
+  .details .txt button{
+    width:30vw;
+    height:7vh;
+    font-size:15px;
+  }
+  .details .Det_img {
+    margin-top: 30px;
+    width: 55vw;
+    height: 35vh;
+  }
+  .details .Det_img img {
+    width: 55vw;
+    height: 35vh;
+  }
+  .features{
+    row-gap: 0vh;
+  }
+  .boxes {
+    grid-template-columns: repeat(1,1fr);
+    row-gap: 2vh;
+  }
+  .boxes .box{
+    height:15vh;
+    width:80vw;
+    row-gap:0.5vh;
+  }
+  .boxes .box div{
+    font-size: 15px;
+  }
+  .boxes .box p{
+    font-size: 8px;
+    text-align: left;
+  }
+  .infoPage h1,p{
+    text-align: center;
+  }
+  .infoPage button{
+    top:150;
+  }
+  .boxes .box div .icon{
+    width:10px;
+    height:10px;
+  }
+}
+@media only screen and (min-width: 550px) and (max-width: 768px) {
+  body {
+    background-position: center;
+  }
+  .details {
+    flex-direction: column;
+    padding: 10px;
+  }
+  .details .txt h1 {
+    font-size: 20px;
+  }
+  .details .txt p {
+    font-size: 12px;
+  }
+  .details .Det_img {
+    margin-top: 30px;
+    width: 35vw;
+    height: 35vh;
+  }
+  .details .Det_img img {
+    width: 35vw;
+    height: 35vh;
+  }
+  .features{
+    row-gap: 0vh;
+  }
+  .boxes {
+    grid-template-columns: repeat(1,1fr);
+    row-gap: 2vh;
+  }
+  .boxes .box{
+    height:15vh;
+    width:60vw;
+    row-gap:0.5vh;
+  }
+  .boxes .box div{
+    font-size: 15px;
+  }
+  .boxes .box p{
+    font-size: 8px;
+    text-align: left;
+  }
+  .infoPage h1,p{
+    text-align: center;
+  }
+  .infoPage button{
+    top:150;
+  }
+  .boxes .box div .icon{
+    width:10px;
+    height:10px;
+  }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1024px) {
+  body {
+    background-position: center;
+  }
+  .details {
+    padding: 30px;
+  }
+  .details .txt{
+    width: 70vw;
+  }
+  .details .txt h1 {
+    font-size: 25px;
+  }
+  .details .txt p {
+    font-size: 10px;
+  }
+  .details .txt button{
+    width:20vw;
+  }
+  .details .Det_img {
+    margin-top: 30px;
+    width: 60vw;
+    height: 40vh;
+  }
+  .details .Det_img img {
+    width: 40vw;
+    height: 45vh;
+  }
+  .features{
+    row-gap: 5vh;
+  }
+  .boxes {
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 5vh;
+  }
+  .boxes .box{
+    height:15vh;
+    width:45vw;
+    row-gap:0.5vh;
+  }
+  .boxes .box div{
+    font-size: 15px;
+  }
+  .boxes .box p{
+    font-size: 8px;
+    text-align: left;
+  }
+  .infoPage h1,p{
+    text-align: center;
+  }
+  .infoPage button{
+    top:150;
+  }
+  .boxes .box div .icon{
+    width:10px;
+    height:10px;
+  }
+}
+@media only screen and (min-width: 1024px) and (max-width: 1250px) {
+  body {
+    background-position: center;
+  }
+  .details {
+    padding: 30px;
+  }
+  .details .txt h1 {
+    font-size: 25px;
+  }
+  .details .txt p {
+    font-size: 17px;
+  }
+  .details .Det_img {
+    margin-top: 30px;
+    width: 60vw;
+    height: 65vh;
+  }
+  .details .Det_img img {
+    width: 50vw;
+    height: 65vh;
+  }
+  .features{
+    row-gap: 5vh;
+  }
+  .boxes {
+    grid-template-columns: repeat(2,1fr);
+    row-gap: 5vh;
+  }
+  .boxes .box{
+    height:15vh;
+    width:45vw;
+    row-gap:0.5vh;
+  }
+  .boxes .box div{
+    font-size: 15px;
+  }
+  .boxes .box p{
+    font-size: 8px;
+    text-align: left;
+  }
+  .infoPage h1,p{
+    text-align: center;
+  }
+  .infoPage button{
+    top:150;
+  }
+  .boxes .box div .icon{
+    width:10px;
+    height:10px;
+  }
+}
+@media only screen and (min-width:1200px) and (max-width:1480px){
+  .details .Det_img {
+    margin-top: 30px;
+    width: 30vw;
+    height: 65vh;
+  }
+}

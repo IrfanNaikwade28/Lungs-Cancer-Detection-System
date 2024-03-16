@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+{% load static %}
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LungCure | Login</title>
+    <link rel="stylesheet" href="{% static 'CSS/utility2.css' %}" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+</head>
+<style>
+  body{
+          background: url('{% static "assets/img/img4.jpg" %}');
+          background-position: center;
+          background-size: cover;
+          background-repeat:no-repeat ;
+  }
+</style>
+<body>
+  <button class="BackBtn"><a href="{% url 'index_view' %}">Go back</a></button>
+
+    <div class="container">
+        <form action="{% url 'login_user' %}" method="POST">
+            <div class="form signin">
+                <h2>Sign In</h2>
+                {% csrf_token %}
+                <div class="inputBox">
+                    <input type="text" required="required" name="username">
+                    <i class="fa fa-user"></i>
+                    <span>username</span>
+                </div>
+                <div class="inputBox">
+                    <input type="password" required="required" name="password">
+                    <i class="fa fa-key"></i>
+                    <span>password</span>
+                </div>
+                <div class="inputBox">
+                    <input type="submit" value="Login">
+                </div>
+                <p>Not Registered ? <a href="{% url 'register_user' %}" class="create">Create an account</a></p>
+            </div>
+        </form>
+    </div>
+    <script src="{% static 'JS/Script.js' %}"></script>
+</body>
+</html>

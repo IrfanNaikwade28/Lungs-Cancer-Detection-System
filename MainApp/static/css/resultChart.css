@@ -132,3 +132,129 @@ p,
 h4,.LMbtn {
   margin-top: 20px;
 }
+
+
+@media only screen and (min-width: 320px) and (max-width: 900px){
+  .navbar h2{
+    display:none;
+  }
+  .navbar .lg img{
+    width:10rem;
+  }
+  .userInfo span{
+    font-size: 10px;
+  }
+  .factors a{
+    font-size: 10px;
+  }
+  .resultSection{
+    justify-content: center;
+  }
+  .userInfo{
+    display: none;
+  }
+  .factors{
+    display:none;
+  }
+  .graphSection{
+    width:40rem;
+    height:30rem;
+    justify-content: center;
+  }
+}
+@media only screen and (min-width: 320px) and (max-width: 425px){
+  .resultSection {
+    height: 40vh;
+  }
+  .disease {
+    height: 50vh;
+    align-items: self-start;
+  }
+  .Card {
+    height: 40vh;
+    width: 90vw;
+  }
+  .gradient-border-card{
+    padding: 5px!important;
+  }
+  .gradient-border-card h2,h4,span{
+    font-size: 10px!important;
+    margin:5px!important;
+  }
+  .gradient-border-card p{
+    font-size: 8px!important;
+    margin:5px!important;
+  }
+  .LMbtn{
+    margin:0px!important;
+  }
+  .glowing-wrapper-button{
+    padding: 5px 10px!important;
+    font-size: 8px!important;
+  }
+  .graphSection{
+    width:18rem;
+    height:13rem;
+  }
+}
+@media only screen and (min-width: 425px) and (max-width: 625px){
+  .resultSection {
+    height: 40vh;
+  }
+  .disease {
+    height: 50vh;
+    align-items: self-start;
+  }
+  .Card {
+    height: 40vh;
+    width: 90vw;
+  }
+  .gradient-border-card{
+    padding: 15px!important;
+  }
+  .gradient-border-card h2,h4,span{
+    font-size: 10px!important;
+    margin:5px!important;
+  }
+  .gradient-border-card p{
+    font-size: 8px!important;
+    margin:5px!important;
+  }
+  .glowing-wrapper-button{
+    padding: 5px 10px!important;
+    font-size: 8px!important;
+  }
+  .graphSection{
+    width:18rem;
+    height:13rem;
+  }
+}
+@media only screen and (min-width: 626px) and (max-width: 900px){
+  .Card {
+    height: 80vh;
+    width: 90vw;
+  }
+  .gradient-border-card{
+    padding: 15px!important;
+  }
+  .glowing-wrapper-button{
+    padding: 10px 20px!important;
+    font-size: 15px!important;
+  }
+}
+@media only screen and (min-width: 900px) and (max-width: 1324px){
+  .graphSection canvas{
+    height:30rem!important;
+  }
+  .Card {
+    height: 70vh;
+    width: 90vw;
+  }
+  .gradient-border-card{
+    padding: 25px!important;
+  }
+  .glowing-wrapper-button{
+    padding: 10px 20px!important;
+    font-size: 15px!important;
+  }
+}

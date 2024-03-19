@@ -31,9 +31,14 @@
           <li><a href="{% url 'features' %}">Features</a></li>
           <li><a href="{% url 'contact' %}">Contact</a></li>
           <li id="actionBtn">
-            <a href="{% url 'login_user' %}">
-                <button class="action-btn nav-btn">Sign Up</button>
-            </a>
+            
+          {% if user.is_authenticated %}
+          <!-- If user is authenticated, show signup button -->
+          <button class="action-btn nav-btn"><a href="{% url 'logout_user' %}">Logout</a></button>
+          {% else %}
+          <!-- If user is not authenticated, show login button -->
+          <button class="action-btn nav-btn"><a href="{% url 'login_user' %}">Login</a></button>
+          {% endif %}
         </li>
         </ul>
         <i class="fa-solid fa-bars menu-icon z-3" id="menuIcon"></i>

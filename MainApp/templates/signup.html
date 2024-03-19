@@ -27,8 +27,9 @@
 
     <div class="container">
       <form action="" method="post">
+        {% csrf_token %} 
         <div class="form signup">
-            {% csrf_token %}
+          
 
           <h2>Sign Up</h2>
           <div class="inputBox">

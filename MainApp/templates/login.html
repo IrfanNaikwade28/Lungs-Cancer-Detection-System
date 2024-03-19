@@ -21,7 +21,7 @@
   <button class="BackBtn"><a href="{% url 'index_view' %}">Go back</a></button>
 
     <div class="container">
-        <form action="{% url 'login_user' %}" method="POST">
+        <form action="" method="POST">
             <div class="form signin">
                 <h2>Sign In</h2>
                 {% csrf_token %}
@@ -42,6 +42,6 @@
             </div>
         </form>
     </div>
-    <script src="{% static 'JS/Script.js' %}"></script>
+    <script src="{% static 'js/Script.js' %}"></script>
 </body>
 </html>

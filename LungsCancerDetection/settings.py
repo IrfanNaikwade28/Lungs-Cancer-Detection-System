@@ -49,6 +49,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    
 ]
 
 ROOT_URLCONF = "LungsCancerDetection.urls"
@@ -135,3 +136,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 MEDIA_URL = "/media/"
+
+LOGIN_URL = '/login/'  # Change '/login/' to match your actual login URL pattern
+

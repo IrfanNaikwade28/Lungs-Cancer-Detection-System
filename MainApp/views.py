@@ -2,12 +2,14 @@ from pyexpat.errors import messages
 from django.shortcuts import render
 from flask import redirect
 from django.contrib.auth import authenticate, login, logout, update_session_auth_hash
-from MainApp.forms import SignUpForm
 from . import model_deploy as dp
 from LungsCancerDetection import settings
 from .models import UserProfile
 from django.conf import settings  
 from django.contrib import messages  # Import the messages module
+from .forms  import RegisterForm
+from django.contrib.auth.decorators import login_required
+from .forms import LoginForm  # Assuming you have a form for login
 
 alldata = None
 
@@ -30,7 +32,7 @@ def result_chart(request):
 
 
 
-
+@login_required
 def image_upload_page(request):
     global alldata
     if request.method == 'POST':
@@ -105,46 +107,46 @@ def image_upload_page(request):
 
 
 
+from django.contrib.auth import authenticate, login
+from django.shortcuts import render, redirect
+from django.contrib import messages
+from .forms import LoginForm  # Assuming you have a form for login
+
 def login_user(request):
     if request.method == 'POST':
-        username = request.POST.get('username')
-        password = request.POST.get('password')
-
-        user = authenticate(request, username=username, password=password)
-        if user is not None:
-            # login(request, user)
-            messages.success(request, 'You have been logged in successfully')
-            return redirect('image_upload_page')
-        else:
-            messages.error(request, "Username or Password is incorrect !!")  # Use messages.error for warning/error messages
-            return redirect('login_user')
+        form = LoginForm(request.POST)
+        if form.is_valid():
+            username = form.cleaned_data['username']
+            password = form.cleaned_data['password']
+            user = authenticate(request, username=username, password=password)
+            if user is not None:
+                login(request, user)
+                return redirect('index_view')  # Redirect to the index view upon successful login
+            else:
+                messages.error(request, 'Invalid username or password.')
     else:
-        return render(request, 'login.html')
+        form = LoginForm()  # Instantiate the form
+
+    return render(request, 'login.html', {"form": form})
+
 
 def logout_user(request):
     logout(request)
     messages.success(request, "Logged out successfully")
     return redirect('index_view')
 
-
 def register_user(request):
     if request.method == 'POST':
-        form = SignUpForm(request.POST)
+        form = RegisterForm(request.POST)
         if form.is_valid():
-            form.save()
-            username = form.cleaned_data['username']
-            password = form.cleaned_data['password1']
-            user = authenticate(request, username=username, password=password)
+            user = form.save()
             login(request, user)
-            return redirect('index_view')
-        else:
-            form = SignUpForm(request.POST)
+            return redirect('index_view')  # Redirect to the index view upon successful registration
     else:
-        form = SignUpForm()
-    context = {
-        'form': form,
-    }
-    return render(request, 'signup.html', context)
+        form = RegisterForm()  # Instantiate the form
+
+    return render(request, 'signup.html', {"form": form})
+
 
 
 

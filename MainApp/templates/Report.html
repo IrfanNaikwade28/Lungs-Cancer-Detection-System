@@ -29,16 +29,17 @@
           <span>Pin code: </span>
         </div>
         <div class="info">
-          <span>{{form_data.first_name}} {{form_data.last_name}}</span>
-          <span>{{form_data.age}}</span>
-          <span>{{form_data.gender}}</span>
-          <span>{{form_data.email}}</span>
-          <span>P1254</span>
-          <span>{{form_data.city}}</span>
-          <span>{{form_data.pincode}}</span>
-        </div>
+          <span>{{ alldata.form_data.first_name }} {{ form_data.last_name }}</span>
+          <span>{{ alldata.form_data.age }}</span>
+          <span>{{ alldata.form_data.gender }}</span>
+          <span>{{ alldata.form_data.email }}</span>
+          <span>P1254</span> <!-- Assuming 'P1254' is a placeholder value -->
+          <span>{{ alldata.form_data.city }}</span>
+          <span>{{ alldata.form_data.pincode }}</span>
+      </div>
+      
         <div class="xray-img">
-          <img src='/media/{{form_data.data_image}}' alt="">
+          <img src='/media/{{alldata.form_data.data_image}}' alt="">
         </div>
       </div>
       <h2>Graph Result</h2>
@@ -79,39 +80,29 @@
         </div>
         <div class="currValue info">
           <span><b>Current Value</b></span>
-          <span>{{data1}}</span>
-          <span>{{data2}}</span>
-          <span>{{data3}}</span>
-          <span>{{data4}}</span>
-          <span>{{data5}}</span>
-          <span>{{data6}}</span>
-          <span>{{data7}}</span>
-          <span>{{data8}}</span>
-          <span>{{data9}}</span>
-          <span>{{data10}}</span>
-          <span>{{data11}}</span>
-          <span>{{data12}}</span>
-          <span>{{data13}}</span>
-          <span>{{data14}}</span>
-        </div>
-        <div class="riskStatus info">
-          <span><b>Status</b></span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-          <span>---</span>
-        </div>
+          <span>{{ alldata.data1 }}</span>
+          <span>{{ alldata.data2 }}</span>
+          <span>{{ alldata.data3 }}</span>
+          <span>{{ alldata.data4 }}</span>
+          <span>{{ alldata.data5 }}</span>
+          <span>{{ alldata.data6 }}</span>
+          <span>{{ alldata.data7 }}</span>
+          <span>{{ alldata.data8 }}</span>
+          <span>{{ alldata.data9 }}</span>
+          <span>{{ alldata.data10 }}</span>
+          <span>{{ alldata.data11 }}</span>
+          <span>{{ alldata.data12 }}</span>
+          <span>{{ alldata.data13 }}</span>
+          <span>{{ alldata.data14 }}</span>
       </div>
+      
+      <div class="riskStatus info">
+          <span><b>Status</b></span>
+          {% for status in result_list %}
+          <span>{{ status }}</span>
+          {% endfor %}
+      </div>
+      
       <p>*Note - Doctor Confirmation is needed.</p>
     </main>
     <script>

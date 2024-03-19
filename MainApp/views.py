@@ -147,6 +147,15 @@ def register_user(request):
     return render(request, 'signup.html', context)
 
 
+
 def report(request):
     global alldata
-    return render(request,'Report.html',alldata)
+    data = [0.63, 0.64, 0.68, 0.74, 0.7, 0.6, 0.61, 0.65, 0.61, 0.61, 0.55, 0.6, 0.63, 0.62]
+
+    values_list = [value for key, value in alldata.items() if key.startswith('data')]
+
+    result_list = ["Positive" if data_value < values_list[index] else "Negative" for index, data_value in enumerate(data)]
+    
+    print(alldata)
+    return render(request, 'Report.html', {'alldata': alldata, 'result_list': result_list})
+

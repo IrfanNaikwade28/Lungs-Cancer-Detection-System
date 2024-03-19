@@ -8,6 +8,9 @@ from LungsCancerDetection import settings
 from .models import UserProfile
 from django.conf import settings  
 from django.contrib import messages  # Import the messages module
+
+alldata = None
+
 def index_view(request):
     return render(request, 'index.html')
 
@@ -25,7 +28,11 @@ def result_chart(request):
     return render(request,'ResultChart.html', {'data' : data})
 
 
+
+
+
 def image_upload_page(request):
+    global alldata
     if request.method == 'POST':
         form_data = {
             'first_name': request.POST['first_name'],
@@ -90,7 +97,9 @@ def image_upload_page(request):
             'lb14': labels[13],
             'form_data' : form_data,
         }
+        alldata = prams
         return render(request, 'ResultChart.html', prams,)
+        
     else:
         return render(request, 'image_upload_page.html')
 
@@ -136,3 +145,8 @@ def register_user(request):
         'form': form,
     }
     return render(request, 'signup.html', context)
+
+
+def report(request):
+    global alldata
+    return render(request,'Report.html',alldata)

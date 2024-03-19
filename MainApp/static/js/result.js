@@ -1,14 +1,47 @@
-// Just a collection of modern UI effects. 
-// I like to keep these kind of things "handy" (in codepen) to show clients/employers what I'm talking about when I say things like "gradient animation"
+ // Navbar toggle
+ var userProfile = document.querySelector(".userProfile");
+ var factorList = document.querySelector(".factorList");
+ var factorCollapse = document.querySelector(".factors-collapse");
+ var userInfoCollapse = document.querySelector(".userInfo-collapse");
+ var btn1 = false;
+ var btn2 = false;
 
-// If I ever get around to it, I'll clean this all up (lots of extra
-// unecessary markup + CSS). For now,
-// I'm just using Codepen as my personal "effect holder" :)
+ factorList.addEventListener("click", function () {
+   if (btn1 == false) {
+	 factorCollapse.style = "display:flex";
+	 factorList.innerHTML = `
+	   <path fill="#00dfc4" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+   `;
+	 btn1 = true;
+   } else {
+	 factorCollapse.style = "display:none";
+	 factorList.innerHTML = `
+	   <path fill="#00dfc4" d="M0 96C0 78.3 14.3 64 32 64H416c17.7 0 32 14.3 32 32s-14.3 32-32 32H32C14.3 128 0 113.7 0 96zM64 256c0-17.7 14.3-32 32-32H480c17.7 0 32 14.3 32 32s-14.3 32-32 32H96c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32H32c-17.7 0-32-14.3-32-32s14.3-32 32-32H416c17.7 0 32 14.3 32 32z"/>
+   `;
+	 btn1 = false;
+   }
+ });
 
-// Inspiration: https://portal.griflan.com/
-// Inspiration: https://github.com/cruip/cruip-tutorials/tree/main/spotlight-effect
+ userProfile.addEventListener("click", function () {
+   if (btn2 == false) {
+	 userInfoCollapse.style = "display:grid";
+	 userProfile.innerHTML = `
+	   <path fill="#00dfc4" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/>
+   `;
+	 btn2 = true;
+   } else {
+	 userInfoCollapse.style = "display:none";
+	 userProfile.innerHTML = `
+	 <path fill="#00dfc4" d="M304 128a80 80 0 1 0 -160 0 80 80 0 1 0 160 0zM96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM49.3 464H398.7c-8.9-63.3-63.3-112-129-112H178.3c-65.7 0-120.1 48.7-129 112zM0 482.3C0 383.8 79.8 304 178.3 304h91.4C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7H29.7C13.3 512 0 498.7 0 482.3z"/>
+	 `;
+	 btn2 = false;
+   }
+ });
 
-// Cards spotlight
+
+
+
+ // Cards spotlight
 class Spotlight {
 	constructor(containerElement) {
 		this.container = containerElement;
@@ -71,8 +104,8 @@ document.addEventListener('DOMContentLoaded', function () {
 		scale: 0.55,
 		scrollTrigger: {
 			trigger: ".dx-fixed-background__media-wrapper",
-			start: "top bottom", 
-			end: "center 75%", 
+			start: "top bottom",
+			end: "center 75%",
 			scrub: true
 		}
 	});
@@ -86,3 +119,4 @@ document.addEventListener('DOMContentLoaded', function () {
 		}
 	});
 });
+

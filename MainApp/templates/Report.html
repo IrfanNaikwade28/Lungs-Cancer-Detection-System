@@ -1,0 +1,128 @@
+{% load static %}
+
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="{% static 'css/report.css' %}" />
+    <title>Lungs Cancer Report</title>
+    <style></style>
+  </head>
+  <body>
+    <header>
+      <img src='{% static "assets/img/Logo_color.png" %}' alt="" />
+      <div>
+        <h2>Akatsuki Clinic</h2>
+        <h4>OncoScence@gmail.com</h4>
+      </div>
+    </header>
+    <main>
+      <h2>Patient Information</h2>
+      <div class="container">
+        <div class="info">
+          <span>Name: </span>
+          <span>Age: </span>
+          <span>Gender: </span>
+          <span>Email: </span>
+          <span>Patient ID: </span>
+          <span>City: </span>
+          <span>Pin code: </span>
+        </div>
+        <div class="info">
+          <span>{{form_data.first_name}} {{form_data.last_name}}</span>
+          <span>{{form_data.age}}</span>
+          <span>{{form_data.gender}}</span>
+          <span>{{form_data.email}}</span>
+          <span>P1254</span>
+          <span>{{form_data.city}}</span>
+          <span>{{form_data.pincode}}</span>
+        </div>
+        <div class="xray-img">
+          <img src='/media/{{form_data.data_image}}' alt="">
+        </div>
+      </div>
+      <h2>Graph Result</h2>
+      <div class="container2">
+        <div class="nmd info">
+          <span><b>Disease Name</b></span>
+          <span>Atelectasis</span>
+          <span>Cardiomegaly</span>
+          <span>Consolidation</span>
+          <span>Edema</span>
+          <span>Effusion</span>
+          <span>Emphysema</span>
+          <span>Fibrosis</span>
+          <span>Hernia</span>
+          <span>Infiltration</span>
+          <span>Mass</span>
+          <span>Nodule</span>
+          <span>Pleural_Thickening</span>
+          <span>Pneumonia</span>
+          <span>Pneumothorax</span>
+        </div>
+        <div class="stdValue info">
+          <span><b>Standard Value</b></span>
+          <span>0.63</span>
+          <span>0.64</span>
+          <span>0.68</span>
+          <span>0.74</span>
+          <span>0.70</span>
+          <span>0.60</span>
+          <span>0.61</span>
+          <span>0.65</span>
+          <span>0.61</span>
+          <span> 0.61</span>
+          <span>0.55</span>
+          <span> 0.60</span>
+          <span>0.63</span>
+          <span>0.62</span>
+        </div>
+        <div class="currValue info">
+          <span><b>Current Value</b></span>
+          <span>{{data1}}</span>
+          <span>{{data2}}</span>
+          <span>{{data3}}</span>
+          <span>{{data4}}</span>
+          <span>{{data5}}</span>
+          <span>{{data6}}</span>
+          <span>{{data7}}</span>
+          <span>{{data8}}</span>
+          <span>{{data9}}</span>
+          <span>{{data10}}</span>
+          <span>{{data11}}</span>
+          <span>{{data12}}</span>
+          <span>{{data13}}</span>
+          <span>{{data14}}</span>
+        </div>
+        <div class="riskStatus info">
+          <span><b>Status</b></span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+          <span>---</span>
+        </div>
+      </div>
+      <p>*Note - Doctor Confirmation is needed.</p>
+    </main>
+    <script>
+      document.body.addEventListener("onload", getPDF());
+      function getPDF() {
+        dw = confirm("Do you Want download this pdf");
+        if (dw == true) {
+          window.print();
+        }
+      }
+    </script>
+    <script src="https://raw.githack.com/eKoopmans/html2pdf/master/dist/html2pdf.bundle.js"></script>
+  </body>
+</html>

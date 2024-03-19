@@ -14,19 +14,18 @@ body {
 }
 .navbar {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   height: 10vh;
   background-color: rgb(39, 41, 61);
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 }
-.navbar .lg {
-  position: absolute;
-  left: 10px;
-}
 .navbar .lg img {
   width: 15vw;
   height: 10vh;
+}
+.navbar .icons svg{
+  display:none;
 }
 .resultSection {
   display: flex;
@@ -73,8 +72,51 @@ body {
   display: flex;
   column-gap: 1vw;
   border-bottom: 2px solid #ffff;
-  width: 15vw;
+  width: 10rem;
   padding: 5px;
+}
+.userInfo-collapse{
+  position: absolute;
+  top: 50px;
+  right:60px;
+  display: none;
+  z-index: 2;
+  grid-template-rows: 50% 50%;
+  row-gap: 1vh;
+  width: 15rem;
+  height: 85vh;
+  background: linear-gradient(45deg, #00dfc4 0%, #2c97c9 100%);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+.userInfo-collapse .imgX {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.userInfo-collapse .imgX img {
+  border: 3px solid #ffff;
+  width: 10rem;
+  height: 30vh;
+}
+.userInfo-collapse .info {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3vh;
+  width: 100%;
+  color: #ffff;
+  font-weight: 400;
+}
+.userInfo-collapse .info .name {
+  border-bottom: 2px solid #ffff;
+  width: 10rem;
 }
 .graphSection {
   display: flex;
@@ -116,6 +158,40 @@ body {
   border-bottom: 2px solid #fff;
   color: #ffff;
 }
+.factors-collapse{
+  position: absolute;
+  top: 45px;
+  right:30px;
+  display: none;
+  width: 10rem;
+  height: 85vh;
+  z-index: 2;
+  flex-direction: column;
+  align-items: center;
+  row-gap: 3vh;
+  justify-content: center;
+  background-color: #ffffff29;
+  backdrop-filter: blur(6px);
+  box-shadow: 0 1px 20px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 7px;
+  -webkit-border-radius: 7px;
+  -moz-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -o-border-radius: 7px;
+  transition:all .9s;
+  -webkit-transition:all .9s;
+  -moz-transition:all .9s;
+  -ms-transition:all .9s;
+  -o-transition:all .9s;
+}
+.factors-collapse a{
+  font-size: 0.8rem;
+  text-decoration: none;
+  color: #00dfc4;
+}
+.factors-collapse a:hover {
+  border-bottom: 2px solid #00dfc4;
+}
 .disease {
   height: 100vh;
   width: 100vw;
@@ -140,6 +216,17 @@ h4,.LMbtn {
   }
   .navbar .lg img{
     width:10rem;
+  }
+  .navbar .icons{
+    display:flex;
+    column-gap: 1rem;
+    margin-right: 20px;
+  }
+  .navbar .icons svg{
+    display: block;
+    width:20px;
+    height:20px;
+    cursor:pointer;
   }
   .userInfo span{
     font-size: 10px;
@@ -243,6 +330,12 @@ h4,.LMbtn {
   }
 }
 @media only screen and (min-width: 900px) and (max-width: 1324px){
+  .factors-collapse{
+    display: none!important;
+  }
+  .userInfo-collapse{
+    display: none!important;
+  }
   .graphSection canvas{
     height:30rem!important;
   }

@@ -46,6 +46,9 @@ header ul li .action-btn{
     -ms-border-radius:20px;
     -o-border-radius:20px;
 }
+.action-btn a{
+    color:#223243!important;
+}
 .action-btn:hover{
     background-color: #6defe0;
 }

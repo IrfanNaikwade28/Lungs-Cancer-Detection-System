@@ -1,8 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
 * {
   margin: 0;
   padding: 0;
   scroll-behavior: smooth;
+  font-family: "Anta";
 }
 body::-webkit-scrollbar {
   width: 0;
@@ -10,7 +12,7 @@ body::-webkit-scrollbar {
 body {
   background-color: rgb(30, 30, 47);
   color: #ffff;
-  font-family: "Poppins", sans-serif;
+  /* font-family: "Poppins", sans-serif; */
 }
 .navbar {
   display: flex;
@@ -24,8 +26,8 @@ body {
   width: 15vw;
   height: 10vh;
 }
-.navbar .icons svg{
-  display:none;
+.navbar .icons svg {
+  display: none;
 }
 .resultSection {
   display: flex;
@@ -75,10 +77,10 @@ body {
   width: 10rem;
   padding: 5px;
 }
-.userInfo-collapse{
+.userInfo-collapse {
   position: absolute;
   top: 50px;
-  right:60px;
+  right: 60px;
   display: none;
   z-index: 2;
   grid-template-rows: 50% 50%;
@@ -158,10 +160,10 @@ body {
   border-bottom: 2px solid #fff;
   color: #ffff;
 }
-.factors-collapse{
+.factors-collapse {
   position: absolute;
   top: 45px;
-  right:30px;
+  right: 30px;
   display: none;
   width: 10rem;
   height: 85vh;
@@ -178,13 +180,13 @@ body {
   -moz-border-radius: 7px;
   -ms-border-radius: 7px;
   -o-border-radius: 7px;
-  transition:all .9s;
-  -webkit-transition:all .9s;
-  -moz-transition:all .9s;
-  -ms-transition:all .9s;
-  -o-transition:all .9s;
+  transition: all 0.9s;
+  -webkit-transition: all 0.9s;
+  -moz-transition: all 0.9s;
+  -ms-transition: all 0.9s;
+  -o-transition: all 0.9s;
 }
-.factors-collapse a{
+.factors-collapse a {
   font-size: 0.8rem;
   text-decoration: none;
   color: #00dfc4;
@@ -193,7 +195,7 @@ body {
   border-bottom: 2px solid #00dfc4;
 }
 .disease {
-  height: 100vh;
+  height: 110vh;
   width: 100vw;
   display: flex;
   justify-content: center;
@@ -205,51 +207,69 @@ body {
 }
 .gradient-border-card h2,
 p,
-h4,.LMbtn {
+h4,
+.LMbtn {
   margin-top: 20px;
 }
+.getpdf {
+  display: flex;
+  align-items:center;
+  justify-content: center;
+  text-decoration: none;
+  margin:3vh 0;
+  font-size: 15px;
+  background-color: #00dfc4;
+  color: #000;
+  width: 10rem;
+  height: 3rem;
+  border: none;
+  border-radius: 20px;
+  -webkit-border-radius: 20px;
+  -moz-border-radius: 20px;
+  -ms-border-radius: 20px;
+  -o-border-radius: 20px;
+}
 
-
-@media only screen and (min-width: 320px) and (max-width: 900px){
-  .navbar h2{
-    display:none;
+@media only screen and (min-width: 320px) and (max-width: 900px) {
+  .navbar h2 {
+    display: none;
   }
-  .navbar .lg img{
-    width:10rem;
+  .navbar .lg img {
+    width: 10rem;
   }
-  .navbar .icons{
-    display:flex;
+  .navbar .icons {
+    display: flex;
     column-gap: 1rem;
     margin-right: 20px;
   }
-  .navbar .icons svg{
+  .navbar .icons svg {
     display: block;
-    width:20px;
-    height:20px;
-    cursor:pointer;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
   }
-  .userInfo span{
+  .userInfo span {
     font-size: 10px;
   }
-  .factors a{
+  .factors a {
     font-size: 10px;
   }
-  .resultSection{
+  .resultSection {
     justify-content: center;
   }
-  .userInfo{
+  .userInfo {
     display: none;
   }
-  .factors{
-    display:none;
+  .factors {
+    display: none;
   }
-  .graphSection{
-    width:40rem;
-    height:30rem;
+  .graphSection {
+    width: 40rem;
+    height: 30rem;
     justify-content: center;
   }
 }
-@media only screen and (min-width: 320px) and (max-width: 425px){
+@media only screen and (min-width: 320px) and (max-width: 425px) {
   .resultSection {
     height: 40vh;
   }
@@ -261,30 +281,32 @@ h4,.LMbtn {
     height: 40vh;
     width: 90vw;
   }
-  .gradient-border-card{
-    padding: 5px!important;
+  .gradient-border-card {
+    padding: 5px !important;
   }
-  .gradient-border-card h2,h4,span{
-    font-size: 10px!important;
-    margin:5px!important;
+  .gradient-border-card h2,
+  h4,
+  span {
+    font-size: 10px !important;
+    margin: 5px !important;
   }
-  .gradient-border-card p{
-    font-size: 8px!important;
-    margin:5px!important;
+  .gradient-border-card p {
+    font-size: 8px !important;
+    margin: 5px !important;
   }
-  .LMbtn{
-    margin:0px!important;
+  .LMbtn {
+    margin: 0px !important;
   }
-  .glowing-wrapper-button{
-    padding: 5px 10px!important;
-    font-size: 8px!important;
+  .glowing-wrapper-button {
+    padding: 5px 10px !important;
+    font-size: 8px !important;
   }
-  .graphSection{
-    width:18rem;
-    height:13rem;
+  .graphSection {
+    width: 18rem;
+    height: 13rem;
   }
 }
-@media only screen and (min-width: 425px) and (max-width: 625px){
+@media only screen and (min-width: 425px) and (max-width: 625px) {
   .resultSection {
     height: 40vh;
   }
@@ -296,58 +318,60 @@ h4,.LMbtn {
     height: 40vh;
     width: 90vw;
   }
-  .gradient-border-card{
-    padding: 15px!important;
+  .gradient-border-card {
+    padding: 15px !important;
   }
-  .gradient-border-card h2,h4,span{
-    font-size: 10px!important;
-    margin:5px!important;
+  .gradient-border-card h2,
+  h4,
+  span {
+    font-size: 10px !important;
+    margin: 5px !important;
   }
-  .gradient-border-card p{
-    font-size: 8px!important;
-    margin:5px!important;
+  .gradient-border-card p {
+    font-size: 8px !important;
+    margin: 5px !important;
   }
-  .glowing-wrapper-button{
-    padding: 5px 10px!important;
-    font-size: 8px!important;
+  .glowing-wrapper-button {
+    padding: 5px 10px !important;
+    font-size: 8px !important;
   }
-  .graphSection{
-    width:18rem;
-    height:13rem;
+  .graphSection {
+    width: 18rem;
+    height: 13rem;
   }
 }
-@media only screen and (min-width: 626px) and (max-width: 900px){
+@media only screen and (min-width: 626px) and (max-width: 900px) {
   .Card {
     height: 80vh;
     width: 90vw;
   }
-  .gradient-border-card{
-    padding: 15px!important;
+  .gradient-border-card {
+    padding: 15px !important;
   }
-  .glowing-wrapper-button{
-    padding: 10px 20px!important;
-    font-size: 15px!important;
+  .glowing-wrapper-button {
+    padding: 10px 20px !important;
+    font-size: 15px !important;
   }
 }
-@media only screen and (min-width: 900px) and (max-width: 1324px){
-  .factors-collapse{
-    display: none!important;
+@media only screen and (min-width: 900px) and (max-width: 1324px) {
+  .factors-collapse {
+    display: none !important;
   }
-  .userInfo-collapse{
-    display: none!important;
+  .userInfo-collapse {
+    display: none !important;
   }
-  .graphSection canvas{
-    height:30rem!important;
+  .graphSection canvas {
+    height: 30rem !important;
   }
   .Card {
     height: 70vh;
     width: 90vw;
   }
-  .gradient-border-card{
-    padding: 25px!important;
+  .gradient-border-card {
+    padding: 25px !important;
   }
-  .glowing-wrapper-button{
-    padding: 10px 20px!important;
-    font-size: 15px!important;
+  .glowing-wrapper-button {
+    padding: 10px 20px !important;
+    font-size: 15px !important;
   }
 }

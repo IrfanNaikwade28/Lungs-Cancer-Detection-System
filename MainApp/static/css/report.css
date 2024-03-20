@@ -80,7 +80,7 @@ span:last-child {
 }
 .container2{
     display: grid;
-    grid-template-columns: 15rem 8rem 15rem 8rem;
+    grid-template-columns: 12rem 8rem 15rem 8rem;
     border:1px solid black;
     align-items: center;
     margin-top: 1rem;

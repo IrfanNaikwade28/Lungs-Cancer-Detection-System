@@ -88,13 +88,13 @@ header .menu-collapse ul{
 }
 header .menu-collapse ul li, .nav-btn{
     text-align: center;
-    width:100%;
+    width:10rem;
     font-family: "Anta", sans-serif;
     font-weight: 800;
 }
 header .menu-collapse ul li .collapse-btn{
-    width:30vw;
-    height:7vh
+    width:10rem;
+    height:3rem;
 }
 .showMenu{
     display: block!important;

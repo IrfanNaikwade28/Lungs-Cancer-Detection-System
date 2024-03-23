@@ -8,8 +8,10 @@
     <link rel="stylesheet" href="{% static 'css/Style.css' %}" />
     <link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}" />
     <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
-    <link rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="{% static 'css/textAnim.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+    <link rel="stylesheet" href="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_plugins/animate-text/animate-text.css">
+    <link rel="stylesheet" href="https://rawcdn.githack.com/SochavaAG/example-mycode/master/_common/css/reset.css">
     <title>OscoScence | Home</title>
   </head>
   <style>
@@ -22,7 +24,7 @@
   <body>
 
     <div class="container-fluid bgColor page" id="Home">
-      <header>
+      <header class="nav-header">
         <div class="logo">
           <img src='{% static "assets/img/Logo.png" %}' alt="">
         </div>
@@ -52,7 +54,15 @@
         </div>
       </header>
       <div class="main-title d-flex justify-content-center align-items-center">
-        <h1>Detect Lungs Cancer</h1>
+        <h1>Detect Lungs&nbsp;
+          <div class="cd-headline clip ag-toggle_title">
+            <span class="cd-words-wrapper">
+              <b class="is-hidden">Cancer</b>
+              <b class="is-hidden">Disease</b>
+              <b class="is-visible">Problems</b>
+            </span>
+          </div>
+        </h1>
         <h1>with X-ray Images</h1>
         <p>Revolutionary System for Early Detection</p>
         <a href="{% url 'image_upload_page' %}">
@@ -63,8 +73,6 @@
             Get Started
           </button>
         </a>
-        
-
       </div>
     </div>
     <div
@@ -158,5 +166,7 @@
     <script src="{% static 'JS/NavCollapse.js' %}"></script>
     <script src="{% static 'JS/Script.js' %}"></script>
     <script src="{% static 'JS/bootstrap.bundle.min.js' %}"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="https://raw.githack.com/SochavaAG/example-mycode/master/pens/1_plugins/animate-text/animate-text.js"></script>
   </body>
 </html>

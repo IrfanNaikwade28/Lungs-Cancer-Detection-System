@@ -53,7 +53,8 @@ header ul li .action-btn{
     background-color: #6defe0;
 }
 header li a:hover{
-    color:rgb(0, 136, 255);
+    color:#00dfc4;
+    text-decoration: none;
     cursor: pointer;
 }
 header .menu-icon{

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Anta&display=swap');
-
 * {
   margin: 0;
   padding: 0;
@@ -10,6 +9,9 @@
 }
 *::-webkit-scrollbar {
   width: 0;
+}
+.nav-header{
+  display: flex!important;
 }
 body {
   height: 100vh;
@@ -53,7 +55,8 @@ header ul{
   background-color: rgba(255, 255, 255, 0.123);
   backdrop-filter: blur(10px);
 }
-.main-title h1 {
+.main-title h1{
+  display: flex;
   font-size: 50px;
 }
 .main-title p {

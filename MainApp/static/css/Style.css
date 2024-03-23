@@ -77,9 +77,11 @@ header ul{
   width:40vw;
   flex-direction: column;
   row-gap: 5vh;
+  height: 25rem;
+  width: 40rem;
+  padding: 2rem;
   background-color: rgba(255, 255, 255, 0.126);
   backdrop-filter: blur(6px);
-  padding:50px;
   border-radius:10px;
   -webkit-border-radius:10px;
   -moz-border-radius:10px;
@@ -247,7 +249,10 @@ a {
     background-position: center;
   }
   .main-title h1 {
-    font-size: 40px;
+    font-size: 20px;
+  }
+  .ag-toggle_title {
+    font-size: 20px!important;
   }
   .main-title p {
     font-size: 10px;

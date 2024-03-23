@@ -52,10 +52,24 @@ header ul li .action-btn{
 .action-btn:hover{
     background-color: #6defe0;
 }
-header li a:hover{
-    color:#00dfc4;
+header li a::after{
+    content: '';
+    display: block;
+    width: 0;
+    background: #00dfc4;
+    height: 1px;
+    transition: width .4s ease-in;
+}
+header li a:hover::after {
+    width: 100%;
     text-decoration: none;
     cursor: pointer;
+    color:#00dfc4;
+}
+header li a:hover {
+    text-decoration: none;
+    cursor: pointer;
+    color:#00dfc4;
 }
 header .menu-icon{
     display:none;

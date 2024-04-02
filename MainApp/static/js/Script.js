@@ -5,28 +5,9 @@ let container = document.querySelector(".container");
 let Uname = document.querySelector("#Uname");
 let pass = document.querySelector("#pass");
 let goBack = document.querySelector(".BackBtn");
+let genInputField = document.getElementById("gender");
 
-// function OpenImageUpload(){
-//     if(Uname.value != "" && pass.value != ""){
-//         location.href = "ImageUpload.html";
-//     }
-//     else{
-//         alert("Username or Password are Empty!");
-//     }
-// }
 
-// login.onclick = function() {
-//   // container.classList.add("signinForm");
-//   container.children[0].style = "display:none";
-//   container.children[1].style = "display:flex";
-// };
-
-// create.onclick = function() {
-//   container.children[1].style = "display:none";
-//   container.children[0].style = "display:flex";
-//   // container.classList.remove("signinForm");
-// };
-// // Login Page End
 
 function moveToPage() {
   location.href = "LoginPage.html";
@@ -56,4 +37,18 @@ goBack.onclick = function(){
 
 function redirectToImageUpload() {
   window.location.href = "{% url 'image_upload_page' %}";
+}
+function textChange(){
+  if(genInputField.value == "Male"){
+    genInputField.value = "Male";
+  }
+  else if(genInputField.value == "Female"){
+    genInputField.value = "Female";
+  }
+  else if(genInputField.value == "Other"){
+    genInputField.value = "Other";
+  }
+  else{
+    genInputField.value = "";
+  }
 }

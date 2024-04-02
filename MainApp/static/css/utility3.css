@@ -101,6 +101,10 @@ body {
     display: grid;
     row-gap: 5vh;
 }
+#gender{
+    background-color: transparent;
+    color:#fff;
+}
 .formElem input::placeholder{
     color:white;
 }
